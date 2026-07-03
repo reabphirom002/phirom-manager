@@ -1,4 +1,8 @@
 <x-app-layout>
+    <!-- នាំចូលឯកសារកូដរបស់ Quill.js (CSS & JS) -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.5/dist/quill.snow.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.5/dist/quill.js"></script>
+
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -14,7 +18,7 @@
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-2xl p-8 sm:p-10 border border-gray-100">
                 
-                <form action="{{ route('lessons.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
+                <form action="{{ route('lessons.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6" id="lesson-form">
                     @csrf
 
                     <!-- ១. ចំណងជើងមេរៀន -->
@@ -55,16 +59,16 @@
                         </div>
                     </div>
 
-                    <!-- ៣. លីងវីដេអូ YouTube (នឹងបង្ហាញតែពេលរើសប្រភេទជា YouTube Video) -->
+                    <!-- ៣. លីងវីដេអូ YouTube -->
                     <div id="youtube-field-container" class="bg-red-50/50 p-5 rounded-2xl border border-red-100 hidden">
                         <label class="block text-sm font-semibold text-red-800 mb-2">{{ __('messages.youtube_url') }} *</label>
                         <input type="url" name="youtube_url" placeholder="https://www.youtube.com/watch?v=..." class="w-full rounded-xl border-red-200 focus:border-red-500 focus:ring-red-500/20 py-3 px-4 shadow-sm transition" value="{{ old('youtube_url') }}">
                         <x-input-error :messages="$errors->get('youtube_url')" class="mt-2" />
                     </div>
 
-                    <!-- ៤. ផ្នែកអាប់ឡូតឯកសារមេរៀន និង រូបភាពតំណាង (Grid ស្វ័យប្រវត្តិ) -->
+                    <!-- ៤. អាប់ឡូតឯកសារមេរៀន និង រូបភាពតំណាង (ស៊ុមរួមខាងក្រៅមិនដាក់ Class hidden ឡើយ) -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- ប្រអប់អាប់ឡូតឯកសារមេរៀន (លាក់/បង្ហាញ) -->
+                        <!-- ប្រអប់អាប់ឡូតឯកសារមេរៀន (កែតម្រូវឈ្មោះ ID ទៅជា file-field-container គ្មានអក្សរ s ត្រូវជាមួយ JS) -->
                         <div id="file-field-container" class="p-5 bg-gray-50 rounded-2xl border border-dashed border-gray-300 hover:border-blue-500 transition hidden">
                             <label class="block text-sm font-semibold text-gray-700 mb-3">{{ __('messages.upload_file') }} *</label>
                             <input type="file" name="file" class="w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer">
@@ -72,11 +76,11 @@
                             <x-input-error :messages="$errors->get('file')" class="mt-2" />
                         </div>
 
-                        <!-- ប្រអប់អាប់ឡូតរូបភាពតំណាង (បង្ហាញជានិច្ច គ្រប់ប្រភេទទាំងអស់) -->
+                        <!-- ប្រអប់អាប់ឡូតរូបភាពតំណាង (កែតម្រូវឈ្មោះ ID ទៅជា thumbnail-field-container) -->
                         <div id="thumbnail-field-container" class="p-5 bg-gray-50 rounded-2xl border border-dashed border-gray-300 hover:border-blue-500 transition">
                             <label class="block text-sm font-semibold text-gray-700 mb-3">{{ __('messages.custom_thumbnail') }}</label>
                             <input type="file" name="thumbnail" accept="image/*" class="w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer">
-                            <p class="text-xs text-gray-400 mt-3">រូបភាពក្របតំណាងមេរៀន (PNG, JPG អតិបរមា 2MB)</p>
+                            <p class="text-xs text-gray-400 mt-3">សម្រាប់រូបភាពក្របតំណាងមេរៀន (PNG, JPG អតិបរមា 2MB)</p>
                             <x-input-error :messages="$errors->get('thumbnail')" class="mt-2" />
                         </div>
                     </div>
@@ -84,11 +88,13 @@
                     <!-- ៥. ការពិពណ៌នាលម្អិត -->
                     <div>
                         <label class="block text-sm font-semibold text-gray-700 mb-2">{{ __('messages.description') }}</label>
-                        <textarea name="description" rows="4" placeholder="សរសេរការពិពណ៌នាសង្ខេបអំពីមេរៀន ឬឯកសារនេះ..." class="w-full rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 py-3 px-4 shadow-sm transition">{{ old('description') }}</textarea>
+                        <div class="rounded-xl border border-gray-300 overflow-hidden shadow-sm">
+                            <div id="editor-container" class="bg-white min-h-[200px] text-base" style="font-family: 'Kantumruy Pro', sans-serif;">{!! old('description') !!}</div>
+                        </div>
+                        <input type="hidden" name="description" id="description-input">
                         <x-input-error :messages="$errors->get('description')" class="mt-2" />
                     </div>
 
-                    <!-- ប៊ូតុង រក្សាទុកមេរៀន -->
                     <div class="pt-4">
                         <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition duration-150 text-base">
                             {{ __('messages.save_lesson') }}
@@ -100,9 +106,28 @@
         </div>
     </div>
 
-    <!-- Javascript គ្រប់គ្រង Grid វៃឆ្លាត -->
+    <!-- Javascript -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            const quill = new Quill('#editor-container', {
+                theme: 'snow',
+                modules: {
+                    toolbar: [
+                        [{ 'header': [1, 2, 3, false] }],
+                        ['bold', 'italic', 'underline', 'strike'],
+                        ['link'], 
+                        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                        ['clean']
+                    ]
+                }
+            });
+
+            const form = document.getElementById('lesson-form');
+            form.onsubmit = function() {
+                const descriptionInput = document.getElementById('description-input');
+                descriptionInput.value = quill.root.innerHTML;
+            };
+
             const typeSelect = document.getElementById('lesson-type');
             const fileContainer = document.getElementById('file-field-container');
             const thumbnailContainer = document.getElementById('thumbnail-field-container');
@@ -114,14 +139,10 @@
                 if (selectedType === 'video') {
                     youtubeContainer.classList.remove('hidden');
                     fileContainer.classList.add('hidden');
-                    
-                    // បង្រួមមកសល់តែ Thumbnail៖ ឱ្យវាពង្រីកពេញផ្ទៃ (Col Span 2) ដើម្បីកុំឱ្យឆ្គងរាង Form
                     thumbnailContainer.classList.add('md:col-span-2');
                 } else if (selectedType === 'pdf' || selectedType === 'word' || selectedType === 'image') {
                     fileContainer.classList.remove('hidden');
                     youtubeContainer.classList.add('hidden');
-                    
-                    // បង្ហាញទាំងពីរ៖ ចែកជា ២ ជួរស្មើគ្នា (លុប Col Span 2 ចេញ)
                     thumbnailContainer.classList.remove('md:col-span-2');
                 } else {
                     fileContainer.classList.add('hidden');

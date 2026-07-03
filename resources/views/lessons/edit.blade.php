@@ -1,4 +1,7 @@
 <x-app-layout>
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.5/dist/quill.snow.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.5/dist/quill.js"></script>
+
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -14,20 +17,17 @@
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-2xl p-8 sm:p-10 border border-gray-100">
                 
-                <form action="{{ route('lessons.update', $lesson->id) }}" method="POST" enctype="multipart/form-data" class="space-y-6">
+                <form action="{{ route('lessons.update', $lesson->id) }}" method="POST" enctype="multipart/form-data" class="space-y-6" id="lesson-form">
                     @csrf
                     @method('PUT')
 
-                    <!-- ១. ចំណងជើងមេរៀន -->
                     <div>
                         <label class="block text-sm font-semibold text-gray-700 mb-2">{{ __('messages.lesson_title') }} *</label>
                         <input type="text" name="title" required class="w-full rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 py-3 px-4 shadow-sm transition" value="{{ $lesson->title }}">
                         <x-input-error :messages="$errors->get('title')" class="mt-2" />
                     </div>
 
-                    <!-- ២. ប្រភេទមេរៀន និង វគ្គសិក្សា -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- ប្រភេទមេរៀន -->
                         <div>
                             <label class="block text-sm font-semibold text-gray-700 mb-2">{{ __('messages.lesson_type') }} *</label>
                             <select name="type" id="lesson-type" required class="w-full rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 py-3 px-4 shadow-sm transition">
@@ -39,7 +39,6 @@
                             <x-input-error :messages="$errors->get('type')" class="mt-2" />
                         </div>
 
-                        <!-- វគ្គសិក្សា -->
                         <div>
                             <label class="block text-sm font-semibold text-gray-700 mb-2">{{ __('messages.category') }} *</label>
                             <div class="flex space-x-2">
@@ -54,16 +53,15 @@
                         </div>
                     </div>
 
-                    <!-- ៣. លីងវីដេអូ YouTube (លាក់/បង្ហាញស្វ័យប្រវត្តិ) -->
                     <div id="youtube-field-container" class="bg-red-50/50 p-5 rounded-2xl border border-red-100 hidden">
                         <label class="block text-sm font-semibold text-red-800 mb-2">{{ __('messages.youtube_url') }}</label>
                         <input type="url" name="youtube_url" class="w-full rounded-xl border-red-200 focus:border-red-500 focus:ring-red-500/20 py-3 px-4 shadow-sm transition" value="{{ $lesson->youtube_url }}">
                         <x-input-error :messages="$errors->get('youtube_url')" class="mt-2" />
                     </div>
 
-                    <!-- ៤. ផ្នែកអាប់ឡូតឯកសារ និង រូបភាពតំណាង (Grid ស្វ័យប្រវត្តិ) -->
+                    <!-- ៤. ផ្នែកអាប់ឡូតឯកសារមេរៀន និង រូបភាពតំណាង (កូដលុប Class hidden ចេញពីស៊ុមរួមខាងក្រៅ) -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- ឯកសារមេរៀន -->
+                        <!-- ប្រអប់អាប់ឡូតឯកសារមេរៀន (កែតម្រូវឈ្មោះ ID ទៅជា file-field-container) -->
                         <div id="file-field-container" class="p-5 bg-gray-50 rounded-2xl border border-dashed border-gray-300 hover:border-blue-500 transition flex flex-col justify-between hidden">
                             <div>
                                 <label class="block text-sm font-semibold text-gray-700 mb-3">{{ __('messages.upload_file') }} (ប្ដូរថ្មី)</label>
@@ -79,7 +77,7 @@
                             <x-input-error :messages="$errors->get('file')" class="mt-2" />
                         </div>
 
-                        <!-- រូបភាពក្រប Thumbnail -->
+                        <!-- ប្រអប់អាប់ឡូតរូបភាពតំណាង (កែតម្រូវឈ្មោះ ID ទៅជា thumbnail-field-container) -->
                         <div id="thumbnail-field-container" class="p-5 bg-gray-50 rounded-2xl border border-dashed border-gray-300 hover:border-blue-500 transition flex flex-col justify-between">
                             <div>
                                 <label class="block text-sm font-semibold text-gray-700 mb-3">{{ __('messages.custom_thumbnail') }} (ប្ដូរថ្មី)</label>
@@ -99,25 +97,44 @@
                     <!-- ៥. ការពិពណ៌នាលម្អិត -->
                     <div>
                         <label class="block text-sm font-semibold text-gray-700 mb-2">{{ __('messages.description') }}</label>
-                        <textarea name="description" rows="4" class="w-full rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 py-3 px-4 shadow-sm transition">{{ $lesson->description }}</textarea>
+                        <div class="rounded-xl border border-gray-300 overflow-hidden shadow-sm">
+                            <div id="editor-container" class="bg-white min-h-[200px] text-base" style="font-family: 'Kantumruy Pro', sans-serif;">{!! $lesson->description !!}</div>
+                        </div>
+                        <input type="hidden" name="description" id="description-input">
                         <x-input-error :messages="$errors->get('description')" class="mt-2" />
                     </div>
 
-                    <!-- ប៊ូតុងធ្វើបច្ចុប្បន្នភាព -->
-                    <div class="pt-4">
-                        <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition duration-150 text-base">
-                            {{ __('messages.update_lesson') }}
-                        </button>
-                    </div>
+                    <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg transition">
+                        {{ __('messages.update_lesson') }}
+                    </button>
                 </form>
 
             </div>
         </div>
     </div>
 
-    <!-- Javascript គ្រប់គ្រង Grid វៃឆ្លាត -->
+    <!-- Javascript គ្រប់គ្រង ID ត្រូវគ្នាទាំងស្រុង -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            const quill = new Quill('#editor-container', {
+                theme: 'snow',
+                modules: {
+                    toolbar: [
+                        [{ 'header': [1, 2, 3, false] }],
+                        ['bold', 'italic', 'underline', 'strike'],
+                        ['link'], 
+                        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                        ['clean']
+                    ]
+                }
+            });
+
+            const form = document.getElementById('lesson-form');
+            form.onsubmit = function() {
+                const descriptionInput = document.getElementById('description-input');
+                descriptionInput.value = quill.root.innerHTML;
+            };
+
             const typeSelect = document.getElementById('lesson-type');
             const fileContainer = document.getElementById('file-field-container');
             const thumbnailContainer = document.getElementById('thumbnail-field-container');
@@ -129,14 +146,10 @@
                 if (selectedType === 'video') {
                     youtubeContainer.classList.remove('hidden');
                     fileContainer.classList.add('hidden');
-                    
-                    // ពង្រីកប្រអប់ Thumbnail ឱ្យពេញផ្ទៃ (Col Span 2) ដើម្បីឱ្យស្អាតរាង Form
                     thumbnailContainer.classList.add('md:col-span-2');
                 } else if (selectedType === 'pdf' || selectedType === 'word' || selectedType === 'image') {
                     fileContainer.classList.remove('hidden');
                     youtubeContainer.classList.add('hidden');
-                    
-                    // បង្រួមមកវិញជា ២ ជួរទន្ទឹមគ្នា
                     thumbnailContainer.classList.remove('md:col-span-2');
                 } else {
                     fileContainer.classList.add('hidden');

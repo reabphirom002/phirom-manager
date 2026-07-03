@@ -3,45 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHIROM MANAGER</title>
+    <title>PHIROM MANAGER - ប្រព័ន្ធគ្រប់គ្រងក្រុមហ៊ុន</title>
     
+    <!-- ប្រើប្រាស់ Tailwind CSS តាមរយៈ Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
+    <!-- ហ្វុនអក្សរខ្មែរ Kantumruy Pro -->
     <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
         body {
             font-family: 'Kantumruy Pro', sans-serif;
         }
+        [x-cloak] { display: none !important; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<!-- កំណត់ x-data សម្រាប់គ្រប់គ្រង Dark/Light Mode (លំនាំដើមយក Dark Mode: true) -->
+<body x-data="{ darkMode: localStorage.getItem('darkMode') !== 'false' }" 
+      :class="darkMode ? 'bg-slate-900 text-slate-100' : 'bg-gray-50 text-slate-800'"
+      class="antialiased min-h-screen flex flex-col justify-between transition-colors duration-300">
 
-    <!-- Header Navigation -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-    <!-- រូបភាពឡូហ្គោរង្វង់មូល -->
-            <img class="h-9 w-9 rounded-full object-cover border border-gray-200 shadow-sm" src="{{ asset('images/logo.png') }}" alt="Logo">
-            <span class="text-2xl font-bold text-blue-600 tracking-wider">PHIROM MANAGER</span>
-        </div>
-                    
-            <div class="flex items-center space-x-6">
+    <!-- ១. របារម៉ឺនុយខាងលើ (Header Navigation) -->
+    <header :class="darkMode ? 'bg-slate-900/80 border-slate-800 text-white' : 'bg-white/80 border-gray-200 text-slate-800 shadow-sm'"
+            class="backdrop-blur-md border-b sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo និងឈ្មោះក្រុមហ៊ុន -->
+            <div class="flex items-center space-x-3">
+                <img class="h-10 w-10 rounded-full object-cover border-2 border-blue-500 shadow-lg" src="{{ asset('images/logo.png') }}" alt="Logo">
+                <span :class="darkMode ? 'from-blue-400 to-indigo-400' : 'from-blue-600 to-indigo-600'"
+                      class="text-xl font-bold tracking-wider bg-gradient-to-r bg-clip-text text-transparent">PHIROM MANAGER</span>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <!-- ប៊ូតុងប្ដូរពន្លឺ (Theme Switcher Button) -->
+                <button @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)" 
+                        :class="darkMode ? 'bg-slate-800 border-slate-700 text-slate-300 hover:text-white' : 'bg-gray-100 border-gray-200 text-gray-600 hover:text-gray-900'"
+                        class="p-2.5 rounded-xl border transition duration-150 focus:outline-none"
+                        title="ប្ដូរពន្លឺ">
+                    <span x-show="darkMode">☀️</span>
+                    <span x-show="!darkMode" x-cloak>🌙</span>
+                </button>
+
                 <!-- ប៊ូតុងប្ដូរភាសា (ខ្មែរ / EN) -->
-                <div class="flex space-x-1">
-                    <a href="{{ route('lang.switch', 'km') }}" class="px-2.5 py-1 text-xs font-semibold rounded {{ app()->getLocale() == 'km' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700' }}">ខ្មែរ</a>
-                    <a href="{{ route('lang.switch', 'en') }}" class="px-2.5 py-1 text-xs font-semibold rounded {{ app()->getLocale() == 'en' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700' }}">EN</a>
+                <div :class="darkMode ? 'bg-slate-800 border-slate-700' : 'bg-gray-100 border-gray-200'"
+                     class="flex p-1 rounded-xl border">
+                    <a href="{{ route('lang.switch', 'km') }}" class="px-3 py-1.5 text-xs font-semibold rounded-lg transition duration-150 {{ app()->getLocale() == 'km' ? 'bg-blue-600 text-white shadow-sm' : 'text-slate-400 hover:text-slate-600' }}">ខ្មែរ</a>
+                    <a href="{{ route('lang.switch', 'en') }}" class="px-3 py-1.5 text-xs font-semibold rounded-lg transition duration-150 {{ app()->getLocale() == 'en' ? 'bg-blue-600 text-white shadow-sm' : 'text-slate-400 hover:text-slate-600' }}">EN</a>
                 </div>
 
                 <!-- ប៊ូតុង Login / Register -->
-                <div class="flex items-center space-x-3">
+                <div class="flex items-center space-x-2">
                     @if (Route::has('login'))
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition">{{ __('messages.go_to_dashboard') }}</a>
+                            <a href="{{ url('/dashboard') }}" class="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg hover:from-blue-700 hover:to-indigo-700 transition duration-150">{{ __('messages.go_to_dashboard') }}</a>
                         @else
-                            <a href="{{ route('login') }}" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition">{{ __('messages.login') }}</a>
+                            <a href="{{ route('login') }}" :class="darkMode ? 'text-slate-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'" class="text-sm font-medium transition duration-150 px-2">{{ __('messages.login') }}</a>
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition">{{ __('messages.register') }}</a>
+                                <a href="{{ route('register') }}" class="px-5 py-2.5 text-sm font-semibold text-white bg-blue-600 rounded-xl shadow-lg hover:bg-blue-700 transition duration-150">{{ __('messages.register') }}</a>
                             @endif
                         @endauth
                     @endif
@@ -50,74 +69,90 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-3xl sm:text-5xl font-bold mb-6 leading-tight">{{ __('messages.welcome_title') }}</h1>
-            <p class="text-lg sm:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">{{ __('messages.welcome_subtitle') }}</p>
-            <div class="space-x-4">
-                <a href="#businesses" class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition">{{ __('messages.learn_more') }}</a>
-            </div>
-        </div>
-    </section>
+    <!-- ២. ផ្នែកខាងលើបង្អស់ (Hero Section) -->
+    <main class="flex-grow">
+        <section class="relative py-24 sm:py-32 overflow-hidden">
+            <!-- ពន្លឺ Mesh Gradient ប្រែប្រួលទៅតាម Dark/Light Mode -->
+            <div :class="darkMode ? 'bg-blue-600/10' : 'bg-blue-500/5'" class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-3xl -z-10 transition duration-300"></div>
+            <div :class="darkMode ? 'bg-purple-600/10' : 'bg-purple-500/5'" class="absolute top-1/3 left-1/3 w-[300px] h-[300px] rounded-full blur-3xl -z-10 transition duration-300"></div>
 
-    <!-- Businesses Section -->
-    <section id="businesses" class="py-16 px-4 max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ __('messages.our_services') }}</h2>
-            <p class="text-gray-600 max-w-xl mx-auto">{{ __('messages.our_services_subtitle') }}</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- 1. Computer Shop -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-200">
-                <div class="p-6">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">{{ __('messages.comp_shop_title') }}</h3>
-                    <p class="text-gray-600 text-sm">{{ __('messages.comp_shop_desc') }}</p>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+                <span :class="darkMode ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' : 'bg-blue-50 text-blue-600 border-blue-100'"
+                      class="px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full border inline-block shadow-sm">PHIROM MANAGER</span>
+                
+                <h1 :class="darkMode ? 'from-white to-slate-400' : 'from-slate-900 to-slate-600'"
+                    class="text-4xl sm:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-b bg-clip-text text-transparent transition duration-300">
+                    {{ __('messages.welcome_title') }}
+                </h1>
+                
+                <p :class="darkMode ? 'text-slate-400' : 'text-gray-600'" 
+                   class="text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed transition duration-300">
+                    {{ __('messages.welcome_subtitle') }}
+                </p>
+                
+                <div class="pt-4">
+                    <a href="{{ route('login') }}" class="px-8 py-4 text-base font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-2xl shadow-xl shadow-blue-600/20 transition duration-150 inline-block">
+                        {{ __('messages.learn_more') }} &rarr;
+                    </a>
                 </div>
             </div>
+        </section>
 
-            <!-- 2. Computer School -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-200">
-                <div class="p-6">
-                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">{{ __('messages.school_title') }}</h3>
-                    <p class="text-gray-600 text-sm">{{ __('messages.school_desc') }}</p>
-                </div>
+        <!-- ៣. ផ្នែកបង្ហាញកាតសេវាកម្មទាំង ៤ -->
+        <section id="businesses" class="py-16 px-4 max-w-7xl mx-auto space-y-16">
+            <div class="text-center space-y-4">
+                <h2 :class="darkMode ? 'text-white' : 'text-gray-900'" class="text-3xl font-bold sm:text-4xl transition duration-300">{{ __('messages.our_services') }}</h2>
+                <p :class="darkMode ? 'text-slate-400' : 'text-gray-600'" class="max-w-2xl mx-auto text-sm sm:text-base transition duration-300">{{ __('messages.our_services_subtitle') }}</p>
             </div>
 
-            <!-- 3. Coffee Shop -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-200">
-                <div class="p-6">
-                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- ១. ហាងលក់កុំព្យូទ័រ -->
+                <div :class="darkMode ? 'bg-slate-800/40 border-slate-800 hover:border-blue-500/40 hover:bg-slate-800/60' : 'bg-white border-gray-200 hover:border-blue-500/40 hover:shadow-md'"
+                     class="rounded-3xl p-8 border flex flex-col justify-between hover:-translate-y-1 transition duration-300">
+                    <div>
+                        <div class="w-12 h-12 bg-blue-500/10 text-blue-500 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner">📦</div>
+                        <h3 :class="darkMode ? 'text-white' : 'text-gray-900'" class="text-xl font-bold mb-3 transition duration-300">{{ __('messages.comp_shop_title') }}</h3>
+                        <p :class="darkMode ? 'text-slate-400' : 'text-gray-600'" class="text-sm leading-relaxed transition duration-300">{{ __('messages.comp_shop_desc') }}</p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">{{ __('messages.coffee_title') }}</h3>
-                    <p class="text-gray-600 text-sm">{{ __('messages.coffee_desc') }}</p>
+                </div>
+
+                <!-- ២. សាលាបង្រៀនកុំព្យូទ័រ -->
+                <div :class="darkMode ? 'bg-slate-800/40 border-slate-800 hover:border-green-500/40 hover:bg-slate-800/60' : 'bg-white border-gray-200 hover:border-green-500/40 hover:shadow-md'"
+                     class="rounded-3xl p-8 border flex flex-col justify-between hover:-translate-y-1 transition duration-300">
+                    <div>
+                        <div class="w-12 h-12 bg-green-500/10 text-green-500 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner">👨‍🎓</div>
+                        <h3 :class="darkMode ? 'text-white' : 'text-gray-900'" class="text-xl font-bold mb-3 transition duration-300">{{ __('messages.school_title') }}</h3>
+                        <p :class="darkMode ? 'text-slate-400' : 'text-gray-600'" class="text-sm leading-relaxed transition duration-300">{{ __('messages.school_desc') }}</p>
+                    </div>
+                </div>
+
+                <!-- ៣. ហាងលក់កាហ្វេ -->
+                <div :class="darkMode ? 'bg-slate-800/40 border-slate-800 hover:border-amber-500/40 hover:bg-slate-800/60' : 'bg-white border-gray-200 hover:border-amber-500/40 hover:shadow-md'"
+                     class="rounded-3xl p-8 border flex flex-col justify-between hover:-translate-y-1 transition duration-300">
+                    <div>
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner">🍹</div>
+                        <h3 :class="darkMode ? 'text-white' : 'text-gray-900'" class="text-xl font-bold mb-3 transition duration-300">{{ __('messages.coffee_shop') }}</h3>
+                        <p :class="darkMode ? 'text-slate-400' : 'text-gray-600'" class="text-sm leading-relaxed transition duration-300">{{ __('messages.coffee_desc') }}</p>
+                    </div>
+                </div>
+
+                <!-- ៤. ផ្ទុកឯកសារ និងមេរៀន -->
+                <div :class="darkMode ? 'bg-slate-800/40 border-slate-800 hover:border-purple-500/40 hover:bg-slate-800/60' : 'bg-white border-gray-200 hover:border-purple-500/40 hover:shadow-md'"
+                     class="rounded-3xl p-8 border flex flex-col justify-between hover:-translate-y-1 transition duration-300">
+                    <div>
+                        <div class="w-12 h-12 bg-purple-500/10 text-purple-500 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner">📄</div>
+                        <h3 :class="darkMode ? 'text-white' : 'text-gray-900'" class="text-xl font-bold mb-3 transition duration-300">{{ __('messages.library_title') }}</h3>
+                        <p :class="darkMode ? 'text-slate-400' : 'text-gray-600'" class="text-sm leading-relaxed transition duration-300">{{ __('messages.library_desc') }}</p>
+                    </div>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <!-- 4. Library -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-200">
-                <div class="p-6">
-                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">{{ __('messages.library_title') }}</h3>
-                    <p class="text-gray-600 text-sm">{{ __('messages.library_desc') }}</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8 px-4 text-center">
-        <p class="text-sm">&copy; {{ date('Y') }} PHIROM MANAGER. {{ __('messages.rights_reserved') }}</p>
+    <!-- ៤. ផ្នែក Footer (ខាងក្រោមបង្អស់) -->
+    <footer :class="darkMode ? 'bg-slate-950 border-slate-800 text-slate-500' : 'bg-gray-100 border-gray-200 text-gray-500'"
+            class="border-t py-8 px-4 text-center text-sm transition-colors duration-300">
+        <p>&copy; {{ date('Y') }} PHIROM MANAGER. {{ __('messages.rights_reserved') }}</p>
     </footer>
 
 </body>

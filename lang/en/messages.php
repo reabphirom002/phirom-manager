@@ -1,5 +1,6 @@
 <?php
 return [
+    // Auth & General
     'login' => 'Log in',
     'register' => 'Register',
     'email' => 'Email Address',
@@ -9,8 +10,13 @@ return [
     'name' => 'Full Name',
     'confirm_password' => 'Confirm Password',
     'already_registered' => 'Already registered?',
+    'back' => 'Back',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'save' => 'Save',
+    'cancel' => 'Cancel',
 
-    // បន្ថែមថ្មីសម្រាប់ទំព័រ Welcome (English)
+    // Welcome Page
     'welcome_title' => 'PHIROM MANAGER Company System',
     'welcome_subtitle' => 'Manage your computer shop, computer school, coffee shop, and document hosting library in one place efficiently.',
     'learn_more' => 'Learn More',
@@ -27,17 +33,34 @@ return [
     'rights_reserved' => 'All rights reserved.',
     'go_to_dashboard' => 'Go to Dashboard',
 
+    // Dashboard Page
     'dashboard' => 'Dashboard',
     'welcome_back' => 'Welcome back',
+    'welcome_back_subtitle' => 'Manage your entire business ecosystem in one centralized, high-performance dashboard.',
+    'quick_actions' => 'Quick Actions',
     'quick_stats' => 'Quick Statistics',
     'total_sales' => 'Total Sales',
     'total_students' => 'Total Students',
     'total_documents' => 'Total Documents',
     'manage_now' => 'Manage Now',
     'logged_in_as' => 'Logged in as',
+    'business_hub' => 'Business Hub Entrance',
 
+    // Quick Actions Buttons
+    'quick_add_product' => '📦 Add Product',
+    'quick_add_student' => '👨‍🎓 Enroll Student',
+    'quick_add_classroom' => '🏫 Create Class',
+    'quick_add_beverage' => '🍹 Add Beverage',
+    'quick_upload_lesson' => '📄 Upload Lesson',
 
-//Lessons
+    // Computer Shop Business Hub details
+    'shop_hub_desc' => 'Manage inventory, products, PC specifications, and track buying/selling prices.',
+    'school_hub_desc' => 'Manage students information, course enrollment, classroom assignments, teachers, and study schedules.',
+    'coffee_hub_desc' => 'Manage drink menus, prices, categories, and Baristas detailed brewing recipes.',
+    'library_hub_desc' => 'Manage educational videos, PDF, Word documents, and image resources for the school.',
+    'photo' => 'Photo',
+    'upload_photo' => 'Upload Student Photo',
+    // Lessons Management
     'add_lesson' => 'Add New Lesson',
     'lesson_title' => 'Lesson Title',
     'lesson_type' => 'Lesson Type',
@@ -47,30 +70,108 @@ return [
     'custom_thumbnail' => 'Custom Thumbnail (Optional)',
     'description' => 'Description / Details',
     'save_lesson' => 'Save Lesson',
-    'back' => 'Back',
     'all_lessons' => 'All Lessons & Resources',
     'no_lessons' => 'No lessons uploaded yet.',
     'download' => 'Download File',
     'watch_video' => 'Watch Video',
-
-    //
-    'edit' => 'Edit',
-    'delete' => 'Delete',
+    'read_more' => 'Read More',
+    'read_less' => 'Read Less',
     'edit_lesson' => 'Edit Lesson',
     'update_lesson' => 'Update Lesson',
-    'sure_to_delete' => 'Are you sure you want to delete this lesson?',
+    'sure_to_delete' => 'Are you sure you want to delete this item?',
     'lesson_updated' => 'Lesson updated successfully.',
     'lesson_deleted' => 'Lesson deleted successfully.',
 
+    // Document Categories
     'category' => 'Course / Category',
     'all' => 'All Resources',
     'videos' => 'Videos',
     'documents' => 'Documents (PDF/Word)',
     'images' => 'Images',
     'enter_category' => 'e.g. Photoshop Course, Administrative Docs',
+    'view_document' => 'View Document',
 
-    'read_more' => 'Read More',
-    'read_less' => 'Read Less',
+    // Student Management
+    'students' => 'Students Manager',
+    'add_student' => 'Enroll New Student',
+    'edit_student' => 'Edit Student Info',
+    'phone' => 'Phone Number',
+    'status' => 'Study Status',
+    'enrollment_date' => 'Enrollment Date',
+    'active' => 'Active',
+    'completed' => 'Completed',
+    'dropped' => 'Dropped',
+    'notes' => 'Notes / Remarks',
+    'course' => 'Enrolled Course',
+    'student_saved' => 'Student enrolled successfully.',
+    'student_updated' => 'Student info updated successfully.',
+    'student_deleted' => 'Student record deleted successfully.',
+    'select_class' => 'Select Class',
+
+    // Courses Management
+    'courses' => 'Courses',
+    'add_course' => 'Add New Course',
+    'course_name' => 'Course Name',
+    'fee' => 'Tuition Fee ($)',
+    'duration' => 'Duration (e.g. 3 Months)',
+    'manage_courses' => 'Manage Courses',
+    'course_saved' => 'Course created successfully.',
+    'course_deleted' => 'Course deleted successfully.',
+    'course_updated' => 'Course updated successfully.',
+    'sure_to_delete_course' => 'Are you sure you want to delete this course? (Enrolled students will be updated to General)',
+
+    // Classrooms & Schedules
+    'classrooms' => 'Classrooms',
+    'manage_classrooms' => 'Manage Classrooms',
+    'add_classroom' => 'Create New Class',
+    'class_name' => 'Class Name',
+    'teacher_name' => 'Teacher Name',
+    'days' => 'Study Days',
+    'time_slot' => 'Study Time',
+    'room' => 'Room / Lab',
+    'classroom_saved' => 'Classroom created successfully.',
+    'classroom_updated' => 'Classroom updated successfully.',
+    'classroom_deleted' => 'Classroom deleted successfully.',
+    'sure_to_delete_classroom' => 'Are you sure you want to delete this classroom?',
+
+    // Computer Shop (Products)
+    'computer_shop' => 'Computer Shop',
+    'product_list' => 'Product Inventory',
+    'add_product' => 'Add New Product',
+    'edit_product' => 'Edit Product Info',
+    'brand' => 'Brand',
+    'specs' => 'Specifications (Specs)',
+    'qty' => 'Stock Qty',
+    'buying_price' => 'Buying Price ($)',
+    'selling_price' => 'Selling Price ($)',
+    'warranty' => 'Warranty',
+    'image_url' => 'Product Image URL',
+    'product_saved' => 'Product added to inventory successfully.',
+    'product_updated' => 'Product information updated successfully.',
+    'product_deleted' => 'Product removed from inventory successfully.',
+    'total_products' => 'Total Products',
+    'total_investment' => 'Total Investment',
+    'expected_revenue' => 'Expected Revenue',
+    'low_stock' => 'Low Stock Warning',
+    'in_stock' => 'In Stock',
+    'out_of_stock' => 'Out of Stock',
+
+    // Coffee Shop (Beverages)
+    'beverage_list' => 'Beverage Menu',
+    'add_beverage' => 'Add New Beverage',
+    'edit_beverage' => 'Edit Beverage Info',
+    'recipe' => 'Barista Recipe',
+    'view_recipe' => 'View Recipe',
+    'beverage_saved' => 'New beverage created successfully.',
+    'beverage_updated' => 'Beverage updated successfully.',
+    'beverage_deleted' => 'Beverage deleted successfully.',
+    'total_beverages' => 'Total Beverages',
+    'average_price' => 'Average Price',
+    'tea' => 'Tea',
+    'coffee_shop' => 'Coffee Shop',
+    'frappe' => 'Frappes',
+    'juice' => 'Juices / Sodas',
+    'others' => 'Others',
+    'enter_recipe' => 'Write down steps, ingredients, and barista instructions here...',
+    
 ];
-
-
