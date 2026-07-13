@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 03, 2026 at 08:55 AM
+-- Generation Time: Jul 05, 2026 at 08:04 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -20,6 +20,64 @@ SET time_zone = "+00:00";
 --
 -- Database: `phirom_manager`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `beverages`
+--
+
+CREATE TABLE `beverages` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `beverage_category_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `price` decimal(8,2) NOT NULL DEFAULT 0.00,
+  `image_url` text DEFAULT NULL,
+  `recipe` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `beverages`
+--
+
+INSERT INTO `beverages` (`id`, `name`, `beverage_category_id`, `price`, `image_url`, `recipe`, `created_at`, `updated_at`) VALUES
+(1, 'Iced Latte (កាហ្វេឡាតេទឹកកក)', 1, 2.50, 'https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=60', '☕ រូបមន្តឆុង Iced Latte ស្ដង់ដារ៖\n- Espresso: 1 Shot (30ml) គ្រាប់កាហ្វេប្លេនស្ដង់ដារប្រចាំហាង\n- Fresh Milk: 120ml (ទឹកដោះគោស្រស់ត្រជាក់)\n- Sweet condensed milk: 15ml (ទឹកដោះគោខាប់)\n- Ice: 1 Full Cup (កែវ ១៦អោន)\n\n👉 វិធីធ្វើ៖\n1. ចាក់ទឹកដោះគោខាប់ និងទឹកដោះគោស្រស់ចូលក្នុងកែវ រួចកូរឱ្យសព្វ។\n2. បន្ថែមទឹកកកឱ្យពេញកែវ។\n3. ច្រោះទឹកកាហ្វេ Espresso ក្ដៅៗចាក់ស្រោចពីលើផ្នែកខាងលើ ដើម្បីបង្កើតជាជាន់ពណ៌ស្អាត។', '2026-07-03 08:25:31', '2026-07-03 08:25:31'),
+(2, 'Hot Cappuccino (កាហ្វេកាពូឈីណូក្ដៅ)', 1, 2.00, 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&auto=format&fit=crop&q=60', '☕ រូបមន្តឆុង Hot Cappuccino ស្ដង់ដារ៖\n- Espresso: 1 Shot (30ml)\n- Steamed Milk: 120ml (ទឹកដោះគោស្រស់ក្តៅវាយពពុះក្រាស់)\n- Cocoa Powder: សម្រាប់រោយពីលើពពុះកាហ្វេ\n\n👉 វិធីធ្វើ៖\n1. ច្រោះទឹកកាហ្វេ Espresso ១ស៊ុតដាក់ក្នុងពែងក្ដៅ។\n2. វាយពពុះទឹកដោះគោស្រស់ (Steam Milk) ឱ្យមានពពុះក្រាស់រលោង (Microfoam)។\n3. ចាក់ទឹកដោះគោស្រស់ក្ដៅចូលក្នុងពែងកាហ្វេ រួចដួសពពុះទឹកដោះគោក្រាស់ៗគ្របពីលើផ្នែកខាងលើឱ្យស្មើគ្នា发育\n4. រោយម្សៅកាកាវ (Cocoa Powder) ពីលើពពុះបន្តិចដើម្បីបង្កើនសោភ័ណភាព។', '2026-07-03 08:25:31', '2026-07-03 08:25:31'),
+(3, 'Iced Americano (កាហ្វេអាមេរីកាណូទឹកកក)', 1, 1.80, 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&auto=format&fit=crop&q=60', '☕ រូបមន្តឆុង Iced Americano ស្ដង់ដារ៖\n- Espresso: Double Shots (60ml)\n- Cold Water: 120ml (ទឹកស្អាតត្រជាក់)\n- Liquid Sugar: 15ml (ទឹកស្ករ - បើអតិថិជនកុम्मतង់ផ្អែមល្មម)\n- Ice: 1 Full Cup (កែវ ១៦អោន)\n\n👉 វិធីធ្វើ៖\n1. ចាក់ទឹកត្រជាក់ និងទឹកស្ករ (បើមាន) ចូលក្នុងកែវ រួចកូរឱ្យសព្វ។\n2. បន្ថែមទឹកកកឱ្យពេញកែវ។\n3. ចាក់កាហ្វេ Espresso ២ស៊ុតពីលើ នោះលោកអ្នកនឹងទទួលបានកាហ្វេខ្មៅស្រស់ដែលមានក្លិនឈ្ងុយខ្ពស់។', '2026-07-03 08:25:31', '2026-07-03 08:25:31'),
+(4, 'Hot Mocha (កាហ្វេម៉ូកាក្ដៅ)', 1, 2.20, 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500&auto=format&fit=crop&q=60', '☕ រូបមន្តឆុង Hot Mocha ស្ដង់ដារ៖\n- Espresso: 1 Shot (30ml)\n- Chocolate Sauce: 15ml (ទឹកសូកូឡាដិតខាប់)\n- Steamed Milk: 120ml (ទឹកដោះគោស្រស់ក្ដៅពពុះស្ដើង)\n\n👉 វិធីធ្វើ៖\n1. ចាក់ទឹកសូកូឡាចូលក្នុងពែង រួចច្រោះកាហ្វេ Espresso ក្ដៅៗពីលើ រួចកូរឱ្យសូកូឡារលាយចូលកាហ្វេបានល្អ។\n2. ចាក់ទឹកដោះគោស្រស់ក្ដៅ (Steamed Milk) ចូល រួចរចនារូបរាងជាគំនូរផ្សេងៗ (Latte Art) តាមចំណូលចិត្ត។', '2026-07-03 08:25:31', '2026-07-03 08:25:31'),
+(5, 'Iced Matcha Latte (តែបៃតងជប៉ុនទឹកកក)', 2, 2.80, 'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=500&auto=format&fit=crop&q=60', '🍵 រូបមន្តឆុង Iced Matcha Latte ស្ដង់ដារ៖\n- Premium Matcha Powder: 5g (ម្សៅតែបៃតងជប៉ុនសុទ្ធ)\n- Hot Water: 30ml (ទឹកក្ដៅសម្រាប់រំលាយតែ)\n- Fresh Milk: 100ml (ទឹកដោះគោស្រស់ត្រជាក់)\n- Sweet Condensed Milk: 20ml (ទឹកដោះគោខាប់)\n- Ice: 1 Full Cup\n\n👉 វិធីធ្វើ៖\n1. ប្រើអំបោសឫស្សី (Chasen) ឬស្លាបព្រាកូរម៉ាស៊ីន រំលាយម្សៅ Matcha ជាមួយទឹកក្ដៅឱ្យរលាយចូលគ្នាល្អ គ្មានដុំកក។\n2. លាយទឹកដោះគោស្រស់ត្រជាក់ និងទឹកដោះគោខាប់ចូលក្នុងកែវ រួចកូរឱ្យសព្វ បន្ថែមទឹកកកឱ្យពេញកែវ។\n3. ចាក់ទឹកតែបៃតង Matcha ក្ដៅៗដែលរំលាយរួច ស្រោចពីលើផ្នែកខាងលើកែវដើម្បីបង្កើតជាពណ៌ពីរជាន់ (ស និងបៃតង) យ៉ាងស្អាត។', '2026-07-03 08:25:31', '2026-07-03 08:25:31'),
+(6, 'Strawberry Frappe (ទឹកស្ត្រប៊ឺរីក្រឡុក)', 3, 3.00, 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&auto=format&fit=crop&q=60', '🍓 រូបមន្តឆុង Strawberry Frappe ស្ដង់ដារ៖\n- Strawberry Puree/Jam: 45ml (ទឹកស្ត្រប៊ឺរីដិតខាប់)\n- Fresh Strawberries: 2 គ្រាប់ (ផ្លែស្ត្រប៊ឺរីស្រស់)\n- Liquid Sugar: 15ml (ទឹកស្ករ)\n- Fresh Milk: 60ml\n- Ice: 1 កែវពេញ\n- Whipped Cream: សម្រាប់បាញ់លម្អពីលើកែវ\n\n👉 វិធីធ្វើ៖\n1. ចាក់គ្រឿងផ្សំទាំងអស់ (ទឹកស្ត្រប៊ឺរី, ផ្លែស្រស់, ទឹកស្ករ, ទឹកដោះគោ និងទឹកកក) ចូលទៅក្នុងម៉ាស៊ីនក្រឡុក (Blender)។\n2. ក្រឡុករហូតដល់ម៉ត់រលោងល្អ (Smooth texture)។\n3. ចាក់ចូលកែវ រួចបាញ់ Whipped Cream និងស្រោចទឹកស្ត្រប៊ឺរីដិតខាប់ពីលើបន្តិចដើម្បីលម្អ។', '2026-07-03 08:25:31', '2026-07-03 08:25:31'),
+(7, 'Passion Fruit Soda (ផាសិនសូដា)', 4, 2.00, 'https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=500&auto=format&fit=crop&q=60', '🍹 រូបមន្តឆុង Passion Fruit Soda ស្ដង់ដារ៖\n- Fresh Passion Fruit: 1 គ្រាប់ (យកសាច់ផាសិនស្រស់)\n- Passion Fruit Syrup: 30ml (ទឹកស៊ីរ៉ូផាសិន)\n- Soda Water: 120ml (ទឹកសូដាត្រជាក់កំប៉ុង)\n- Liquid Sugar: 10ml (ទឹកស្ករ)\n- Ice: 1 Full Cup\n\n👉 វិធីធ្វើ៖\n1. ចាក់ទឹកស៊ីរ៉ូផាសិន ទឹកស្ករ និងសាច់ផាសិនស្រស់ពាក់កណ្ដាល ចូលក្នុងកែវ រួចកូរឱ្យសព្វ។\n2. បន្ថែមទឹកកកឱ្យពេញកែវ។\n3. ចាក់ទឹកសូដាត្រជាក់ៗបំពេញកែវ រួចដាក់សាច់ផាសិនស្រស់ដែលនៅសល់ពីលើ ដើម្បីលម្អឱ្យមើលទៅស្រស់ជានិច្ច។', '2026-07-03 08:25:31', '2026-07-03 08:25:31'),
+(8, 'Hot Green Tea (តែបៃតងក្ដៅបែបបុរាណ)', 2, 1.50, 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500&auto=format&fit=crop&q=60', '🍵 រូបមន្តឆុង Hot Green Tea ស្ដង់ដារ៖\n- Green Tea Leaves: 3g (ស្លឹកតែបៃតងស្ងួតលំដាប់ខ្ពស់)\n- Hot Water: 250ml (ទឹកក្ដៅសីតុណ្ហភាព 85°C)\n\n👉 វិធីធ្វើ៖\n1. ដាក់ស្លឹកតែចូលក្នុងប៉ាន់តែ ឬតម្រងតែ រួចចាក់ទឹកក្ដៅចូលដើម្បីលាងស្លឹកតែបន្តិច (រួចចាក់ទឹកនោះចោលភ្លាម)។\n2. ចាក់ទឹកក្ដៅ ២៥០ml ចូល រួចទុកចោលរយៈពេល ២ ទៅ ៣ នាទី ដើម្បីឱ្យតែចេញជាតិឈ្ងុយ និងរសជាតិល្អ។\n3. ច្រោះយកស្លឹកតែចេញ រួចចាក់តែដែលក្ដៅៗចូលក្នុងពែង រួចរងចាំពិសា។', '2026-07-03 08:25:31', '2026-07-03 08:25:31'),
+(9, 'Iced Chocolate (សូកូឡាទឹកកក)', 5, 2.50, 'https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500&auto=format&fit=crop&q=60', '🍫 រូបមន្តឆុង Iced Chocolate ស្ដង់ដារ៖\n- Dark Chocolate Powder: 15g (ម្សៅសូកូឡាខ្មៅដិត)\n- Hot Water: 40ml (សម្រាប់រំលាយម្សៅ)\n- Fresh Milk: 100ml\n- Sweet Condensed Milk: 20ml (ទឹកដោះគោខាប់)\n- Ice: 1 Full Cup\n\n👉 វិធីធ្វើ៖\n1. រំលាយម្សៅសូកូឡាជាមួយទឹកក្ដៅឱ្យរលាយសព្វល្អ គ្មានដុំកក。\n2. ចាក់ទឹកដោះគោស្រស់ និងទឹកដោះគោខាប់ចូលក្នុងកែវ រួចកូរកូរឱ្យរលាយល្អ រួចបន្ថែមទឹកកកពេញកែវ។\n3. ចាក់ទឹកសូកូឡាដិតខាប់ដែលបានរំលាយរួច ស្រោចពីលើកែវដើម្បីបង្កើតជាពណ៌ស្អាត។', '2026-07-03 08:25:31', '2026-07-03 08:25:31'),
+(10, 'Iced Lemon Tea (តែក្រូចឆ្មារទឹកកក)', 2, 2.00, 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&auto=format&fit=crop&q=60', '🍹 រូបមន្តឆុង Iced Lemon Tea ស្ដង់ដារ៖\n- Black Tea Brewed: 120ml (ទឹកតែខ្មៅដែលឆុងរួច)\n- Fresh Lemon Juice: 15ml (ទឹកក្រូចឆ្មារស្រស់)\n- Liquid Sugar: 30ml (ទឹកស្ករ)\n- Ice: 1 Full Cup\n- Lemon Slices: ២ ចំណិតក្រូចឆ្មារ\n\n👉 វិធីធ្វើ៖\n1. លាយទឹកតែខ្មៅ ទឹកក្រូចឆ្មារស្រស់ និងទឹកស្ករចូលក្នុងកែវក្រឡុក (Shaker)។\n2. បន្ថែមទឹកកក រួចក្រឡុក (Shake) ឱ្យលឿនដើម្បីឱ្យតែត្រជាក់ខ្លាំង និងចេញពពុះស្ដើង។\n3. ចាក់ចូលកែវ រួចដាក់ចំណិតក្រូចឆ្មារស្រស់ពីលើដើម្បីបន្ថែមភាពស្រស់ស្រាយ និងក្លិនឈ្ងុយ។', '2026-07-03 08:25:31', '2026-07-03 08:25:31'),
+(11, 'Soy Milk', 5, 1.10, 'storage/beverages/PcO7j2suTjnY68DI5OII2Jy5uUYqJSKv1oHPqdye.png', 'Help me', '2026-07-03 01:30:28', '2026-07-03 01:31:03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `beverage_categories`
+--
+
+CREATE TABLE `beverage_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `beverage_categories`
+--
+
+INSERT INTO `beverage_categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'កាហ្វេ (Coffee)', '2026-07-03 08:25:31', '2026-07-03 08:25:31'),
+(2, 'តែ (Tea)', '2026-07-03 08:25:31', '2026-07-03 08:25:31'),
+(3, 'ភេសជ្ជៈក្រឡុក (Frappes)', '2026-07-03 08:25:31', '2026-07-03 08:25:31'),
+(4, 'ទឹកផ្លែឈើ/សូដា (Juice/Sodas)', '2026-07-03 08:25:31', '2026-07-03 08:25:31'),
+(5, 'ផ្សេងៗ (Others)', '2026-07-03 08:25:31', '2026-07-03 08:25:31');
 
 -- --------------------------------------------------------
 
@@ -98,7 +156,7 @@ CREATE TABLE `classrooms` (
 INSERT INTO `classrooms` (`id`, `name`, `course_id`, `teacher_name`, `room`, `days`, `time_slot`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Class Word-A1', 1, 'សៅ ភីរំុ', 'បន្ទប់ Lab 1', 'ចន្ទ-ពុធ-សុក្រ', '08:00 AM - 09:30 AM', 'active', '2026-07-03 01:20:00', '2026-07-03 01:20:00'),
 (2, 'Class Web-B1', 3, 'សៅ ភីរំុ', 'បន្ទប់ Lab 2', 'ចន្ទ-ពុធ-សុក្រ', '05:30 PM - 07:00 PM', 'active', '2026-07-03 01:25:00', '2026-07-03 01:25:00'),
-(3, 'Class Hardware-H1', 2, 'សេង សុភ័ក្រ', 'បន្ទប់ Lab 1', 'អង្គារ-ព្រហស្បតិ៍', '10:00 AM - 11:30 AM', 'active', '2026-07-03 01:30:00', '2026-07-03 01:30:00'),
+(3, 'Class Hardware-H1', 2, 'សេង សុភ័ក្រ', 'បន្ទប់ Lab 1', 'អង្គារ-ព្រហស្បតិ៍', '10:00 AM - 11:30 AM', 'completed', '2026-07-03 01:30:00', '2026-07-05 08:54:15'),
 (4, 'Class Coffee-C1', 4, 'លីវ មុន្នី', 'បន្ទប់ Counter', 'សៅរ៍-អាទិត្យ', '02:00 PM - 04:00 PM', 'active', '2026-07-03 01:35:00', '2026-07-03 01:35:00'),
 (5, 'Class Web-A2', 3, 'សៅ ភីរំុ', 'បន្ទប់ Lab 2', 'អង្គារ-ព្រហស្បតិ៍', '08:00 AM - 09:30 AM', 'active', '2026-07-03 01:40:00', '2026-07-03 01:40:00');
 
@@ -251,6 +309,51 @@ CREATE TABLE `password_reset_tokens` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `password_reset_tokens`
+--
+
+INSERT INTO `password_reset_tokens` (`email`, `token`, `created_at`) VALUES
+('phirom2@gmail.com', '$2y$12$N17TGrfhagn.LIulDI3VsuVXwQZ3SoTCzrfQHQT.5W2HtvJm5HKWi', '2026-07-05 10:22:22'),
+('reabphirom@gmail.com', '$2y$12$83l7Nnr5K7AuECkCttQiS.q3db4Y6tV8FsxwCdXCU19eCrXu3vrSG', '2026-07-05 10:29:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `brand` varchar(100) NOT NULL,
+  `specs` text DEFAULT NULL,
+  `qty` int(11) NOT NULL DEFAULT 0,
+  `buying_price` decimal(10,2) NOT NULL DEFAULT 0.00,
+  `selling_price` decimal(10,2) NOT NULL DEFAULT 0.00,
+  `warranty` varchar(100) DEFAULT NULL,
+  `image_url` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `brand`, `specs`, `qty`, `buying_price`, `selling_price`, `warranty`, `image_url`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'MacBook Pro 14-inch M3', 'Apple', 'Apple M3 Chip, 8-Core CPU, 10-Core GPU, 8GB Unified Memory, 512GB SSD', 8, 1350.00, 159.00, '1 Year', 'https://sm.pcmag.com/pcmag_uk/review/a/apple-macb/apple-macbook-pro-14-inch-2023-m3_99pf.jpg', 'កុំព្យូទ័រយួរដៃដ៏ប្រណីតសម្រាប់អ្នកឌីហ្សាញ និងការងាររដ្ឋបាលទូទៅ ថ្មប្រើប្រាស់បានយូរ។', '2026-07-03 07:09:56', '2026-07-03 00:57:29'),
+(2, 'ASUS ROG Zephyrus G14', 'ASUS', 'AMD Ryzen 9, 16GB DDR5, 1TB NVMe SSD, RTX 4060 8GB, 14\" QHD+ 165Hz', 3, 1150.00, 1999.00, '2 Years', 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500&auto=format&fit=crop&q=60', 'កុំព្យូទ័រហ្គេមមីង និងសរសេរកូដខ្នាតស្រាល ងាយស្រួលយកតាមខ្លួន និងសមត្ថភាពខ្លាំង។', '2026-07-03 07:09:56', '2026-07-03 01:06:03'),
+(3, 'Dell XPS 13 Plus 9320', 'Dell', 'Intel Core i7-1360P, 16GB LPDDR5, 512GB SSD, 13.4\" FHD+ Touch screen', 3, 1200.00, 1450.00, '1 Year', 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=500&auto=format&fit=crop&q=60', 'កុំព្យូទ័របែបការិយាល័យលំដាប់ខ្ពស់ ស៊ុមស្ដើងខ្លាំង និងមានរចនាបថទាន់សម័យ។', '2026-07-03 07:09:56', '2026-07-03 07:09:56'),
+(4, 'Lenovo Legion 5 Pro', 'Lenovo', 'Intel Core i7-13700HX, 16GB RAM, 1TB SSD, RTX 4070 8GB, 16\" WQXGA 240Hz', 2, 1250.00, 1499.00, '2 Years', 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&auto=format&fit=crop&q=60', 'កុំព្យូទ័រលំដាប់កំពូលសម្រាប់ការលេងហ្គេមធ្ងន់ៗ និងការងារកាត់តវីដេអូកម្រិត 4K។', '2026-07-03 07:09:56', '2026-07-03 01:04:53'),
+(6, 'MSI Cyborg 15', 'MSI', 'Intel Core i5-12450H, 8GB DDR5, 512GB SSD, RTX 4050 6GB, 15.6\" FHD 144Hz', 4, 680.00, 799.00, '1 Year', 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&auto=format&fit=crop&q=60', 'កុំព្យូទ័រលេងហ្គេមតម្លៃធូរថ្លៃ សមត្ថភាពល្អអាចសរសេរកូដ និងរៀនឌីហ្សាញបានរលូន។', '2026-07-03 07:09:56', '2026-07-03 00:57:15'),
+(7, 'Acer Aspire 3', 'Acer', 'Intel Core i3-1115G4, 8GB RAM, 256GB SSD, Intel UHD Graphics, 15.6\" HD', 10, 270.00, 329.00, '1 Year', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDuVfHjM0jYUl6pXVoni8LIE8dai_tKN0Fbqr9VlwW4tHdhG4VR3MK0jQp&s=10', 'កុំព្យូទ័រថវិការទាប សម្រាប់សិស្សវិទ្យាល័យសិក្សាមូលដ្ឋានគ្រឹះ និងវាយឯកសារ។', '2026-07-03 07:09:56', '2026-07-03 00:55:42'),
+(8, 'Logitech G502 Hero Mouse', 'Logitech', 'High Performance Gaming Mouse, 25,600 DPI, 11 Programmable Buttons', 25, 32.00, 45.00, '6 Months', 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=60', 'ម៉ៅហ្គេមមីងអាជីព និងពេញនិយមបំផុត មានល្បឿនលឿន និងទម្ងន់អាចសម្រួលបាន។', '2026-07-03 07:09:56', '2026-07-03 07:09:56'),
+(9, 'Keychron K2 V2 Keyboard', 'Keychron', 'Wireless Mechanical Keyboard, Gateron Brown Switch, RGB Backlight', 12, 65.00, 85.00, '1 Year', 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&auto=format&fit=crop&q=60', 'ក្តារចុចមេកានិចឥតខ្សែ ពេញនិយមសម្រាប់អ្នកសរសេរកូដ និងការវាយអត្ថបទរលូន។', '2026-07-03 07:09:56', '2026-07-03 07:09:56'),
+(10, 'Samsung Odyssey G5 27\"', 'Samsung', '27-inch Curved Gaming Monitor, WQHD (2560x1440), 144Hz, 1ms, HDR10', 2, 210.00, 269.00, '1 Year', 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&auto=format&fit=crop&q=60', 'អេក្រង់កោងកម្រិតច្បាស់ 2K សម្រាប់បទពិសោធន៍លេងហ្គេម និងមើលកូដបានទូលំទូលាយ។', '2026-07-03 07:09:56', '2026-07-03 07:09:56'),
+(12, 'laptop Acer Aspire Lite AL16 52P-526Z, NX.J5SEM.001, Core i5-1335U, 16GB, 512GB SSD, DOS, Gray', 'Acer', 'Laptop, ACER, Acer Aspire Lite AL16 52P-526Z,', 10, 2549.00, 1779.00, '1 Year', 'https://media.zid.store/e4aadd21-62d3-4ecb-b286-5cfefed6d23c/cbbb5d0f-66d7-4b50-80a2-22e4afb7a4db.png', 'Keyboard: Arabic - English\r\nAcer Aspire Lite AL16 52P-526Z\r\nIntel Core i5-1335U Processor\r\n- Non-touch screen, 16\'\' WUXGA (1920x1200) IPS\r\nRam16GB DDR5\r\n512GB SSD\r\nIntel UHD Graphics\r\nModel : (NX.J5SEM.001)', '2026-07-03 01:02:58', '2026-07-03 01:05:32');
+
 -- --------------------------------------------------------
 
 --
@@ -271,7 +374,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('491xEyVqrxRwPcbwGq2uByjHwvkhOK5Gmj0OMj85', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiVWp3QzZzMWRpNmdOSXpLY2tKaGhRSG9pR0pwa0dibGNvRGNLTXd1NSI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjI5OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvbGVzc29ucyI7czo1OiJyb3V0ZSI7czoxMzoibGVzc29ucy5pbmRleCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czo2OiJsb2NhbGUiO3M6Mjoia20iO30=', 1783061704);
+('x35fPaCPIXz0FWv64t49e66poAjEQ2TSZw4qjKIu', 4, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiZ21nQVhLbzloczNUME50VDN4TXZkQlBhMlFYUWkxRjRQZm9lSE9KdCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXNoYm9hcmQiO3M6NToicm91dGUiO3M6OToiZGFzaGJvYXJkIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6NDtzOjY6ImxvY2FsZSI7czoyOiJlbiI7fQ==', 1783274495);
 
 -- --------------------------------------------------------
 
@@ -284,6 +387,7 @@ CREATE TABLE `students` (
   `name` varchar(255) NOT NULL,
   `phone` varchar(20) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
+  `photo_url` text DEFAULT NULL,
   `course_id` bigint(20) UNSIGNED DEFAULT NULL,
   `classroom_id` bigint(20) UNSIGNED DEFAULT NULL,
   `status` varchar(255) NOT NULL DEFAULT 'active',
@@ -297,17 +401,17 @@ CREATE TABLE `students` (
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `name`, `phone`, `email`, `course_id`, `classroom_id`, `status`, `enrollment_date`, `notes`, `created_at`, `updated_at`) VALUES
-(1, 'សែម ពិសិដ្ឋ', '012345678', 'piseth@gmail.com', 3, 2, 'active', '2026-06-15', 'សិស្សរៀនពូកែ និងឧស្សាហ៍ព្យាយាម', '2026-07-03 02:00:00', '2026-07-03 02:00:00'),
-(2, 'លី ចាន់ត្រា', '098765432', 'chantra@gmail.com', 1, 1, 'active', '2026-06-20', 'ថ្នាក់រៀនរដ្ឋបាលពេលព្រឹក', '2026-07-03 02:05:00', '2026-07-03 02:05:00'),
-(3, 'សុខ ម៉ារី', '077888999', 'mary@gmail.com', 4, 4, 'active', '2026-06-25', 'បុគ្គលិកកាហ្វេមកហ្វឹកហាត់បន្ថែម', '2026-07-03 02:10:00', '2026-07-03 02:10:00'),
-(4, 'សេង បូរ៉ា', '015666777', 'bora@gmail.com', 2, 3, 'active', '2026-06-10', 'រៀនតម្លើង និងជួសជុល Hardware', '2026-07-03 02:15:00', '2026-07-03 02:15:00'),
-(5, 'ចាន់ សុភ័ក្ត្រ', '085333444', 'sopheap@gmail.com', 3, 5, 'active', '2026-06-18', 'រៀនសរសេរកូដថ្នាក់ព្រឹក', '2026-07-03 02:20:00', '2026-07-03 02:20:00'),
-(6, 'កែវ សុវណ្ណ', '093222111', 'sovann@gmail.com', 1, 1, 'completed', '2026-04-01', 'បានបញ្ចប់វគ្គសិក្សារួចរាល់ដោយជោគជ័យ', '2026-07-03 02:25:00', '2026-07-03 02:25:00'),
-(7, 'ម៉ៅ ចាន់នី', '012999000', 'channy@gmail.com', 3, 2, 'active', '2026-06-15', 'សិស្សថ្នាក់កូដពេលល្ងាច', '2026-07-03 02:30:00', '2026-07-03 02:30:00'),
-(8, 'អ៊ុង វិសាល', '088444555', 'visal@gmail.com', 2, 3, 'dropped', '2026-05-01', 'រវល់ការងារផ្ទាល់ខ្លួន បោះបង់ពាក់កណ្ដាលទី', '2026-07-03 02:35:00', '2026-07-03 02:35:00'),
-(9, 'ទេព ស្រីអូន', '096555111', 'sreyoun@gmail.com', 4, 4, 'active', '2026-06-25', 'ថ្នាក់ឆុងកាហ្វេចុងសប្ដាហ៍', '2026-07-03 02:40:00', '2026-07-03 02:40:00'),
-(10, 'ជា វឌ្ឍនៈ', '070777888', 'vathanak@gmail.com', 3, 5, 'active', '2026-06-18', 'សិស្សថ្នាក់កូដពេលព្រឹក', '2026-07-03 02:45:00', '2026-07-02 23:50:49');
+INSERT INTO `students` (`id`, `name`, `phone`, `email`, `photo_url`, `course_id`, `classroom_id`, `status`, `enrollment_date`, `notes`, `created_at`, `updated_at`) VALUES
+(1, 'សែម ពិសិដ្ឋ', '012345678', 'piseth@gmail.com', 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&auto=format&fit=crop&q=80', 3, 2, 'active', '2026-06-15', 'សិស្សរៀនពូកែ និងឧស្សាហ៍ព្យាយាម ផ្នែកសរសេរកូដ', '2026-07-02 19:00:00', '2026-07-02 19:00:00'),
+(2, 'លី ចាន់ត្រា', '098765432', 'chantra@gmail.com', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80', 1, 1, 'active', '2026-06-20', 'ថ្នាក់រៀនរដ្ឋបាលពេលព្រឹក ឧស្សាហ៍ព្យាយាម', '2026-07-02 19:05:00', '2026-07-02 19:05:00'),
+(3, 'សុខ ម៉ារី', '077888999', 'mary@gmail.com', 'https://images.unsplash.com/photo-1494790108377-be9c29b29401?w=500&auto=format&fit=crop&q=60', 4, 4, 'active', '2026-06-25', 'បុគ្គលិកកាហ្វេមកហ្វឹកហាត់រូបមន្តថ្មីៗបន្ថែម', '2026-07-02 19:10:00', '2026-07-02 19:10:00'),
+(4, 'សេង បូរ៉ា', '015666777', 'bora@gmail.com', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80', 2, 3, 'active', '2026-06-10', 'រៀនផ្នែកបច្ចេកទេសតម្លើង និងជួសជុល Hardware', '2026-07-02 19:15:00', '2026-07-02 19:15:00'),
+(5, 'ចាន់ សុភ័ក្ត្រ', '085333444', 'sopheap@gmail.com', 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop&q=80', 3, 5, 'active', '2026-06-18', 'រៀនសរសេរកូដថ្នាក់ព្រឹក មានមូលដ្ឋានគ្រឹះខ្លះៗ', '2026-07-02 19:20:00', '2026-07-02 19:20:00'),
+(6, 'កែវ សុវណ្ណ', '093222111', 'sovann@gmail.com', 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80', 1, 1, 'completed', '2026-04-01', 'បានបញ្ចប់វគ្គសិក្សារដ្ឋបាលកុំព្យូទ័ររួចរាល់ដោយជោគជ័យ', '2026-07-02 19:25:00', '2026-07-02 19:25:00'),
+(7, 'ម៉ៅ ចាន់នី', '012999000', 'channy@gmail.com', 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop&q=80', 3, 2, 'active', '2026-06-15', 'សិស្សថ្នាក់កូដពេលល្ងាច មានវិន័យល្អ', '2026-07-02 19:30:00', '2026-07-02 19:30:00'),
+(8, 'អ៊ុង វិសាល', '088444555', 'visal@gmail.com', 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80', 2, 3, 'dropped', '2026-05-01', 'រវល់ការងារផ្ទាល់ខ្លួនខ្លាំង បោះបង់ពាក់កណ្ដាលទី', '2026-07-02 19:35:00', '2026-07-02 19:35:00'),
+(9, 'ទេព ស្រីអូន', '096555111', 'sreyoun@gmail.com', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80', 4, 4, 'active', '2026-06-25', 'ថ្នាក់ឆុងកាហ្វេចុងសប្ដាហ៍ រៀនលឿនយល់រហ័ស', '2026-07-02 19:40:00', '2026-07-02 19:40:00'),
+(10, 'ជា វឌ្ឍនៈ', '070777888', 'vathanak@gmail.com', 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=400&auto=format&fit=crop&q=80', 3, 5, 'active', '2026-06-18', 'សិស្សថ្នាក់កូដពេលព្រឹក ឧស្សាហ៍សួរមេរៀន', '2026-07-02 19:45:00', '2026-07-02 19:45:00');
 
 -- --------------------------------------------------------
 
@@ -323,20 +427,36 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Phirom', 'phirom2@gmail.com', NULL, '$2y$12$vJbNxHWhB/4t4Ir4sOeige.JWUl0shM/z6wc8Aas4PBlRNAGVAkMi', NULL, '2026-07-01 00:03:01', '2026-07-01 00:40:14'),
-(2, 'Admin', 'phirom@gmail.com', NULL, '$2y$12$/QfX5svYMVEpySObG0pkWOnViwk9QIUJXro564rDAU9JNetwYEIJa', NULL, '2026-07-01 09:45:04', '2026-07-01 09:45:04');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `avatar`) VALUES
+(1, 'Phirom2', 'phirom2@gmail.com', NULL, '$2y$12$vJbNxHWhB/4t4Ir4sOeige.JWUl0shM/z6wc8Aas4PBlRNAGVAkMi', NULL, '2026-07-01 00:03:01', '2026-07-05 10:10:10', NULL),
+(2, 'Admin', 'phirom@gmail.com', NULL, '$2y$12$/QfX5svYMVEpySObG0pkWOnViwk9QIUJXro564rDAU9JNetwYEIJa', NULL, '2026-07-01 09:45:04', '2026-07-01 09:45:04', NULL),
+(3, 'Super Admin', 'superadmin@gmail.com', NULL, '$2y$12$Tw6is.oSG.sWO60M86XvJOGLQ4HSN9mk8.pWOatt/Jy6q4tZEdBjm', NULL, '2026-07-03 11:33:06', '2026-07-03 11:33:06', NULL),
+(4, 'Reab Phirom', 'reabphirom@gmail.com', NULL, '$2y$12$xbcuyFEgiNqzXLXShLT5TOpqzUeeVZCJEW4AoS40M3zvwBft8E/SS', NULL, '2026-07-05 10:29:00', '2026-07-05 10:59:09', 'storage/avatars/Dwm8lzctQBNepp3FMRexGPwN5tpw630i7eUUiN5s.png');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `beverages`
+--
+ALTER TABLE `beverages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `beverages_beverage_category_id_foreign` (`beverage_category_id`);
+
+--
+-- Indexes for table `beverage_categories`
+--
+ALTER TABLE `beverage_categories`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `cache`
@@ -411,6 +531,12 @@ ALTER TABLE `password_reset_tokens`
   ADD PRIMARY KEY (`email`);
 
 --
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sessions`
 --
 ALTER TABLE `sessions`
@@ -436,6 +562,18 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `beverages`
+--
+ALTER TABLE `beverages`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `beverage_categories`
+--
+ALTER TABLE `beverage_categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -471,13 +609,19 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `lessons`
 --
 ALTER TABLE `lessons`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `students`
@@ -489,11 +633,17 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `beverages`
+--
+ALTER TABLE `beverages`
+  ADD CONSTRAINT `beverages_beverage_category_id_foreign` FOREIGN KEY (`beverage_category_id`) REFERENCES `beverage_categories` (`id`) ON DELETE SET NULL;
 
 --
 -- Constraints for table `lessons`

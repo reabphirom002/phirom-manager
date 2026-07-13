@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL; // នាំចូលប្រព័ន្ធគ្រប់គ្រង URL Facade
+use Illuminate\Support\Facades\Gate; // នាំចូលប្រព័ន្ធគ្រប់គ្រងសិទ្ធិ Gate Facade
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,5 +25,10 @@ class AppServiceProvider extends ServiceProvider
         if (config('app.env') === 'production') {
             URL::forceScheme('https');
         }
+
+        // បង្កើតសិទ្ធិសន្តិសុខឱ្យស្គាល់ Admin ឬ Owner ធំរបស់ប្រព័ន្ធ
+        Gate::define('isAdmin', function ($user) {
+            return in_array($user->role, ['admin', 'owner']);
+        });
     }
 }

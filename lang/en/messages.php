@@ -1,5 +1,8 @@
 <?php
 return [
+    'profile' => 'Profile',
+    'logout' => 'Log Out',
+
     // Auth & General
     'login' => 'Log in',
     'register' => 'Register',
@@ -47,10 +50,10 @@ return [
     'business_hub' => 'Business Hub Entrance',
 
     // Quick Actions Buttons
-    'quick_add_product' => '📦 Add Product',
-    'quick_add_student' => '👨‍🎓 Enroll Student',
+    'quick_add_product' => '📦 Add PC Stock',
+    'quick_add_student' => '🎓 Register Student',
     'quick_add_classroom' => '🏫 Create Class',
-    'quick_add_beverage' => '🍹 Add Beverage',
+    'quick_add_beverage' => '☕ Add Beverage',
     'quick_upload_lesson' => '📄 Upload Lesson',
 
     // Computer Shop Business Hub details
@@ -60,6 +63,7 @@ return [
     'library_hub_desc' => 'Manage educational videos, PDF, Word documents, and image resources for the school.',
     'photo' => 'Photo',
     'upload_photo' => 'Upload Student Photo',
+    
     // Lessons Management
     'add_lesson' => 'Add New Lesson',
     'lesson_title' => 'Lesson Title',
@@ -174,4 +178,80 @@ return [
     'others' => 'Others',
     'enter_recipe' => 'Write down steps, ingredients, and barista instructions here...',
     
+    // Profile & Central Dashboard
+    'account_settings' => 'Account Settings & Profile',
+    'active_account' => 'Active Account',
+    'profile_info' => 'Profile Information',
+    'profile_info_desc' => "Update your account's profile information and email address.",
+    'name' => 'Name',
+    'email' => 'Email',
+    'email_unverified' => 'Your email address is unverified.',
+    'resend_verification' => 'Click here to re-send the verification email.',
+    'verification_sent' => 'A new verification link has been sent to your email address.',
+    'save' => 'Save',
+    'saved' => 'Saved.',
+    'update_password' => 'Update Password',
+    'password_desc' => 'Ensure your account is using a long, random password to stay secure.',
+    'current_password' => 'Current Password',
+    'new_password' => 'New Password',
+    'confirm_password' => 'Confirm Password',
+    'delete_account' => 'Delete Account',
+    'delete_desc' => 'Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.',
+    'confirm_delete_title' => 'Are you sure you want to delete your account?',
+    'confirm_delete_desc' => 'Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.',
+    'password' => 'Password',
+    'cancel' => 'Cancel',
+    
+    // Forgot Password Page
+    'forgot_password_title' => 'Forgot Password?',
+    'forgot_password_text' => 'Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.',
+    'email_password_reset_link' => 'Email Password Reset Link',
+    'back_to_login' => 'Back to Login',
+
+    // Change Avatar
+    'change_photo' => 'Change Photo',
+    'delete_photo' => 'Delete Photo',
+
+    'copyright' => '© 2026 PHIROM MANAGER. All Rights Reserved. Copyright by PHIROM Co., Ltd.',
+    'unauthorized_warning' => 'Authorized system access only. Unauthorized actions are strictly prohibited.',
+
+    // Slide Banners
+    'slide_pc_title' => 'Manage Computer Stocks & POS System',
+    'slide_pc_desc' => 'Manage physical computer hardware inventory, print invoices, and monitor financial investments.',
+    'slide_cafe_title' => 'Manage Cafe Menu & Secret Recipes',
+    'slide_cafe_desc' => 'Manage beverage lists, sales prices, categories, and protect secret brewing instructions.',
+    'slide_school_title' => 'Train Human Resources for Digital Era',
+    'slide_school_desc' => 'Manage students, classroom timetables, teachers, and global education resource libraries.',
+
+    // Workspace Cards Text
+    'workspace_computers' => 'Workspace Computers',
+    'workspace_computers_desc' => 'Manage PC stocks, pricing lists, and shop financial investments.',
+    'workspace_school' => 'Workspace School',
+    'workspace_school_desc' => 'Manage student enrollments, classrooms, courses, and schedules.',
+    'workspace_cafe' => 'Workspace Cafe',
+    'workspace_cafe_desc' => 'Manage beverage menus, cafe prices, and brewing recipes.',
+    'workspace_library' => 'Workspace Lessons',
+    'workspace_library_desc' => 'View, download, and manage study PDFs, documents, and videos.',
+    'enter_workspace' => 'Enter Workspace',
+    'security_box_title' => 'Your Account is Highly Secure',
+    'security_box_desc' => 'All your information is protected. Please wait for the Owner to grant workspace access.',
+
+    // Bottom Enterprise Info
+    'about_us' => 'About Us',
+    'about_us_desc' => 'PHIROM Co., Ltd. is a leading enterprise in Cambodia specializing in high-quality computer stock management and academic school training programs.',
+    'access_structure' => 'Access Structure',
+    'supreme_full_access' => 'Supreme Full Access',
+    'manage_workspace_desc' => 'Manage Specific Workspace',
+    'operation_staff' => 'General Operation Staff',
+    'students_customers' => 'Students & Customers',
+    'contact_support' => 'Contact Support',
+    'address_detail' => 'Address: Phnom Penh City, Kingdom of Cambodia',
+    'phone_detail' => 'Phone: 012 345 678 / 098 765 432',
+    'email_detail' => 'Email Support: support@phirom.com',
+    'system_diagnostics' => 'System Diagnostics',
+    'enterprise_security_guide' => 'Enterprise Security Guide',
+    'security_tip_1' => 'Export and back up SQL database from phpMyAdmin regularly.',
+    'security_tip_2' => 'Keep your credentials highly secure and never share them.',
+    'security_tip_3' => 'Modify staff roles on the matrix with high caution.',
+    'hello' => 'Hello',
 ];

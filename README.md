@@ -57,3 +57,11 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+1.ការគ្រប់គ្រងប្រព័ន្ធ PHIROM MANAGER
+https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221avbrVVIHUWEMaXbi4RCTT0HszFLE6_5q%22%5D,%22action%22:%22open%22,%22userId%22:%22100432305492731123453%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing
+
+
+2.ការគ្រប់គ្រងប្រព័ន្ធ PHIROM MANAGER
+https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%22173nwNEh6Kvd7_T_-edKo6qONB8drZ8r3%22%5D,%22action%22:%22open%22,%22userId%22:%22100432305492731123453%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing

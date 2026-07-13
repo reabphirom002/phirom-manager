@@ -1,140 +1,154 @@
 <x-app-layout>
-    <x-slot name="header">
-        <div class="flex justify-between items-center">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('messages.dashboard') }}
-            </h2>
-            <span class="text-sm text-gray-500 font-medium">PHIROM MANAGER &bull; Control Panel</span>
-        </div>
-    </x-slot>
+    <div class="py-12 relative z-10 font-sans transition-all duration-500">
+        
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-12 relative">
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-8">
-            
-            <!-- ១. ផ្ទាំងស្វាគមន៍បែបប្រណីត -->
-            <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden">
-                <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-white/10 blur-xl"></div>
-                <div class="absolute -left-10 -bottom-10 w-40 h-40 rounded-full bg-white/10 blur-xl"></div>
-                
-                <div class="relative z-10 max-w-2xl">
-                    <span class="px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider bg-white/20 rounded-full border border-white/20 mb-4 inline-block">{{ __('messages.dashboard') }}</span>
-                    <h3 class="text-3xl sm:text-4xl font-bold mb-3 tracking-wide leading-tight">
-                        {{ __('messages.welcome_back') }}, {{ Auth::user()->name }}!
-                    </h3>
-                    <p class="text-blue-100 text-sm sm:text-base leading-relaxed">
-                        {{ __('messages.welcome_back_subtitle') }}
+            <!-- ១. បដារំកិលអូតូ (Premium Auto-Play Carousel Banner) -->
+            <div x-data="{ 
+                    activeSlide: 1, 
+                    slidesCount: 3,
+                    next() { this.activeSlide = this.activeSlide === this.slidesCount ? 1 : this.activeSlide + 1 },
+                    prev() { this.activeSlide = this.activeSlide === 1 ? this.slidesCount : this.activeSlide - 1 }
+                 }"
+                 x-init="setInterval(() => next(), 7000)" 
+                 class="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-80 sm:h-[480px] border border-white/20 dark:border-slate-800/50 group transition-all duration-500">
+                 
+                 <!-- Slide 1: PHIROM COMPUTER -->
+                 <div x-show="activeSlide === 1" x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0 scale-105" x-transition:enter-end="opacity-100 scale-100" class="absolute inset-0">
+                     <img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" alt="Computers">
+                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent"></div>
+                     <div class="absolute inset-x-0 bottom-0 p-8 sm:p-12 flex flex-col justify-end h-full space-y-4">
+                         <span class="px-4 py-1.5 rounded-full text-xs font-black bg-blue-600/30 text-blue-200 border border-blue-400/30 uppercase tracking-[0.2em] self-start">PHIROM COMPUTER</span>
+                         <h1 class="text-3xl sm:text-5xl font-black text-white leading-tight tracking-tight">{{ __('messages.slide_pc_title') }}</h1>
+                         <p class="text-gray-300 text-sm sm:text-lg leading-relaxed max-w-2xl font-medium">{{ __('messages.slide_pc_desc') }}</p>
+                     </div>
+                 </div>
+
+                 <!-- Slide 2: PHIROM CAFE -->
+                 <div x-show="activeSlide === 2" x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0 scale-105" x-transition:enter-end="opacity-100 scale-100" class="absolute inset-0" x-cloak>
+                     <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" alt="Cafe">
+                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent"></div>
+                     <div class="absolute inset-x-0 bottom-0 p-8 sm:p-12 flex flex-col justify-end h-full space-y-4">
+                         <span class="px-4 py-1.5 rounded-full text-xs font-black bg-amber-600/30 text-amber-200 border border-amber-400/30 uppercase tracking-[0.2em] self-start">PHIROM CAFE</span>
+                         <h1 class="text-3xl sm:text-5xl font-black text-white leading-tight tracking-tight">{{ __('messages.slide_cafe_title') }}</h1>
+                         <p class="text-gray-300 text-sm sm:text-lg leading-relaxed max-w-2xl font-medium">{{ __('messages.slide_cafe_desc') }}</p>
+                     </div>
+                 </div>
+
+                 <!-- Slide 3: PHIROM SCHOOL -->
+                 <div x-show="activeSlide === 3" x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0 scale-105" x-transition:enter-end="opacity-100 scale-100" class="absolute inset-0" x-cloak>
+                     <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" alt="School">
+                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent"></div>
+                     <div class="absolute inset-x-0 bottom-0 p-8 sm:p-12 flex flex-col justify-end h-full space-y-4">
+                         <span class="px-4 py-1.5 rounded-full text-xs font-black bg-emerald-600/30 text-emerald-200 border border-emerald-400/30 uppercase tracking-[0.2em] self-start">PHIROM SCHOOL</span>
+                         <h1 class="text-3xl sm:text-5xl font-black text-white leading-tight tracking-tight">{{ __('messages.slide_school_title') }}</h1>
+                         <p class="text-gray-300 text-sm sm:text-lg leading-relaxed max-w-2xl font-medium">{{ __('messages.slide_school_desc') }}</p>
+                     </div>
+                 </div>
+
+                 <!-- Navigation Arrows -->
+                 <button @click="prev()" class="absolute left-6 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white p-4 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 border border-white/10 focus:outline-none">
+                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+                 </button>
+                 <button @click="next()" class="absolute right-6 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white p-4 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 border border-white/10 focus:outline-none">
+                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                 </button>
+
+                 <!-- Indicators -->
+                 <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
+                     <template x-for="i in slidesCount" :key="i">
+                         <button @click="activeSlide = i" 
+                                 :class="activeSlide === i ? 'w-10 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]' : 'w-2.5 bg-white/40'" 
+                                 class="h-2.5 rounded-full transition-all duration-500 focus:outline-none"></button>
+                     </template>
+                 </div>
+            </div>
+
+            <!-- ២. ផ្ទាំង Workspace Grid (Premium Visualization) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                @php
+                    $workspaces = [
+                        ['perm' => 'manage_products', 'route' => 'workspace.computers', 'title' => __('messages.workspace_computers'), 'img' => 'https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=400&q=80', 'color' => 'blue'],
+                        ['perm' => 'manage_school', 'route' => 'workspace.school', 'title' => __('messages.workspace_school'), 'img' => 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80', 'color' => 'emerald'],
+                        ['perm' => 'manage_beverages', 'route' => 'workspace.cafe', 'title' => __('messages.workspace_cafe'), 'img' => 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=400&q=80', 'color' => 'amber'],
+                        ['perm' => 'manage_lessons', 'route' => 'workspace.library', 'title' => __('messages.workspace_library'), 'img' => 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=400&q=80', 'color' => 'purple'],
+                    ];
+                @endphp
+
+                @foreach($workspaces as $ws)
+                    @if(auth()->user()->canPerform($ws['perm']))
+                        <div class="relative h-[440px] rounded-[2.5rem] overflow-hidden shadow-xl border border-transparent hover:border-{{ $ws['color'] }}-500/50 hover:-translate-y-3 transition-all duration-500 group">
+                            <img src="{{ $ws['img'] }}" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition duration-700" alt="Workspace">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                            <div class="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end h-full space-y-4">
+                                <h3 class="text-2xl font-black text-white tracking-wide">{{ $ws['title'] }}</h3>
+                                <a href="{{ route($ws['route']) }}" class="w-full py-4 bg-{{ $ws['color'] }}-600 hover:bg-{{ $ws['color'] }}-700 text-white font-bold rounded-2xl text-sm text-center transition-all shadow-lg active:scale-95">
+                                    {{ __('messages.enter_workspace') }} &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+
+            <!-- ៣. ផ្ទាំងសកម្មភាពរហ័ស (⚡ Quick Actions) -->
+            <div class="bg-white/60 dark:bg-slate-900/40 backdrop-blur-xl rounded-[2.5rem] p-10 border border-slate-200 dark:border-slate-800/60 shadow-xl space-y-8">
+                <h3 class="text-2xl font-black tracking-tight flex items-center space-x-4">
+                    <span class="p-2 bg-indigo-500/10 rounded-xl">⚡</span>
+                    <span>{{ __('messages.quick_actions') }}</span>
+                </h3>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                    @php
+                        $actions = [
+                            'manage_school' => ['students.create', 'emerald', 'quick_add_student'],
+                            'manage_products' => ['products.create', 'blue', 'quick_add_product'],
+                            'manage_beverages' => ['beverages.create', 'amber', 'quick_add_beverage'],
+                            'manage_lessons' => ['lessons.create', 'purple', 'quick_upload_lesson']
+                        ];
+                    @endphp
+                    @foreach($actions as $perm => $data)
+                        @if(auth()->user()->canPerform($perm))
+                            <a href="{{ route($data[0]) }}" class="group flex flex-col items-center p-6 rounded-3xl bg-{{ $data[1] }}-500/5 border border-{{ $data[1] }}-500/10 hover:border-{{ $data[1] }}-500/40 hover:bg-{{ $data[1] }}-500/10 transition-all duration-300">
+                                <span class="text-xs font-black text-{{ $data[1] }}-600 dark:text-{{ $data[1] }}-400 uppercase tracking-widest text-center">{{ __('messages.' . $data[2]) }}</span>
+                            </a>
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- ៤. ផ្នែកព័ត៌មានក្រុមហ៊ុន (Enterprise Info) -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-10">
+                <div class="bg-white/40 dark:bg-slate-900/30 backdrop-blur-md rounded-[2.5rem] p-8 border border-slate-200 dark:border-slate-800 shadow-sm transition duration-300">
+                    <h4 class="text-xl font-black mb-4 flex items-center space-x-3">
+                        <span class="text-2xl">🏢</span>
+                        <span>{{ __('messages.about_us') }}</span>
+                    </h4>
+                    <p class="text-sm font-medium leading-relaxed text-slate-600 dark:text-slate-400">
+                        {{ __('messages.about_us_desc') }}
                     </p>
                 </div>
-            </div>
 
-            <!-- ២. ប៊ូតុងបញ្ជាសកម្មភាពរហ័ស (Quick Actions) -->
-            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
-                <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">{{ __('messages.quick_actions') }}</h4>
-                <div class="flex flex-wrap gap-3">
-                    <!-- បន្ថែមកុំព្យូទ័ររហ័ស -->
-                    <a href="{{ route('products.create') }}" class="inline-flex items-center space-x-2 px-4 py-2.5 bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold rounded-xl text-xs transition duration-150 shadow-sm">
-                        <span>{{ __('messages.quick_add_product') }}</span>
-                    </a>
-                    <!-- ចុះឈ្មោះសិស្សរហ័ស -->
-                    <a href="{{ route('students.create') }}" class="inline-flex items-center space-x-2 px-4 py-2.5 bg-green-50 hover:bg-green-100 text-green-700 font-semibold rounded-xl text-xs transition duration-150 shadow-sm">
-                        <span>{{ __('messages.quick_add_student') }}</span>
-                    </a>
-                    <!-- បង្កើតថ្នាក់រៀនរហ័ស -->
-                    <a href="{{ route('classrooms.index') }}" class="inline-flex items-center space-x-2 px-4 py-2.5 bg-purple-50 hover:bg-purple-100 text-purple-700 font-semibold rounded-xl text-xs transition duration-150 shadow-sm">
-                        <span>{{ __('messages.quick_add_classroom') }}</span>
-                    </a>
-                    <!-- បន្ថែមភេសជ្ជៈរហ័ស -->
-                    <a href="{{ route('beverages.create') }}" class="inline-flex items-center space-x-2 px-4 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-700 font-semibold rounded-xl text-xs transition duration-150 shadow-sm">
-                        <span>{{ __('messages.quick_add_beverage') }}</span>
-                    </a>
-                    <!-- បង្ហោះមេរៀនរហ័ស -->
-                    <a href="{{ route('lessons.create') }}" class="inline-flex items-center space-x-2 px-4 py-2.5 bg-pink-50 hover:bg-pink-100 text-pink-700 font-semibold rounded-xl text-xs transition duration-150 shadow-sm">
-                        <span>{{ __('messages.quick_upload_lesson') }}</span>
-                    </a>
+                <div class="bg-white/40 dark:bg-slate-900/30 backdrop-blur-md rounded-[2.5rem] p-8 border border-slate-200 dark:border-slate-800 shadow-sm transition duration-300">
+                    <h4 class="text-xl font-black mb-4 flex items-center space-x-3">
+                        <span class="text-2xl">📊</span>
+                        <span>{{ __('messages.access_structure') }}</span>
+                    </h4>
+                    <ul class="text-sm font-bold space-y-3">
+                        <li class="flex items-center text-indigo-500"><span class="w-2.5 h-2.5 rounded-full bg-indigo-500 mr-3"></span>Owner / Admin</li>
+                        <li class="flex items-center text-blue-500"><span class="w-2.5 h-2.5 rounded-full bg-blue-500 mr-3"></span>Manager</li>
+                        <li class="flex items-center text-emerald-500"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500 mr-3"></span>Staff</li>
+                    </ul>
                 </div>
-            </div>
 
-            <!-- ៣. ផ្នែកស្ថិតិសង្ខេបប្រចាំក្រុមហ៊ុន -->
-            <div>
-                <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">{{ __('messages.quick_stats') }}</h4>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- ការលក់សរុប -->
-                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-center justify-between hover:shadow-md transition">
-                        <div>
-                            <span class="text-xs text-gray-400 font-bold uppercase tracking-wider block mb-1">{{ __('messages.total_sales') }}</span>
-                            <span class="text-2xl font-bold text-gray-900">$ {{ number_format(\App\Models\Product::sum(\Illuminate\Support\Facades\DB::raw('qty * selling_price')), 2) }}</span>
-                        </div>
-                        <div class="p-3.5 rounded-2xl bg-blue-50 text-blue-600 shadow-sm">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                    </div>
-
-                    <!-- សិស្សសរុប -->
-                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-center justify-between hover:shadow-md transition">
-                        <div>
-                            <span class="text-xs text-gray-400 font-bold uppercase tracking-wider block mb-1">{{ __('messages.total_students') }}</span>
-                            <span class="text-2xl font-bold text-gray-900">{{ \App\Models\Student::count() }} នាក់</span>
-                        </div>
-                        <div class="p-3.5 rounded-2xl bg-green-50 text-green-600 shadow-sm">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
-                        </div>
-                    </div>
-
-                    <!-- ភេសជ្ជៈសរុប -->
-                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-center justify-between hover:shadow-md transition">
-                        <div>
-                            <span class="text-xs text-gray-400 font-bold uppercase tracking-wider block mb-1">{{ __('messages.total_beverages') }}</span>
-                            <span class="text-2xl font-bold text-gray-900">{{ \App\Models\Beverage::count() }} មុខ</span>
-                        </div>
-                        <div class="p-3.5 rounded-2xl bg-amber-50 text-amber-600 shadow-sm">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ៤. ផ្ទាំងច្រកចូលទៅកាន់ការគ្រប់គ្រងស្ថាប័នទាំង ៤ (Premium Business Hub) -->
-            <div>
-                <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">{{ __('messages.business_hub') }}</h4>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- ១. គ្រប់គ្រងហាងកុំព្យូទ័រ -->
-                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition duration-200">
-                        <div>
-                            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4 text-lg">📦</div>
-                            <h5 class="font-bold text-lg text-gray-900 mb-1">{{ __('messages.computer_shop') }}</h5>
-                            <p class="text-xs text-gray-500 mb-6 leading-relaxed">{{ __('messages.shop_hub_desc') }}</p>
-                        </div>
-                        <a href="{{ route('products.index') }}" class="w-full text-center py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs transition shadow-sm">{{ __('messages.manage_now') }}</a>
-                    </div>
-
-                    <!-- ២. គ្រប់គ្រងសាលាបង្រៀនកុំព្យូទ័រ -->
-                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition duration-200">
-                        <div>
-                            <div class="w-10 h-10 rounded-xl bg-green-100 text-green-600 flex items-center justify-center mb-4 text-lg">👨‍🎓</div>
-                            <h5 class="font-bold text-lg text-gray-900 mb-1">{{ __('messages.school_title') }}</h5>
-                            <p class="text-xs text-gray-500 mb-6 leading-relaxed">{{ __('messages.school_hub_desc') }}</p>
-                        </div>
-                        <a href="{{ route('students.index') }}" class="w-full text-center py-2.5 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl text-xs transition shadow-sm">{{ __('messages.manage_now') }}</a>
-                    </div>
-
-                    <!-- ៣. គ្រប់គ្រងហាងកាហ្វេ -->
-                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition duration-200">
-                        <div>
-                            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4 text-lg">🍹</div>
-                            <h5 class="font-bold text-lg text-gray-900 mb-1">{{ __('messages.coffee_shop') }}</h5>
-                            <p class="text-xs text-gray-500 mb-6 leading-relaxed">{{ __('messages.coffee_hub_desc') }}</p>
-                        </div>
-                        <a href="{{ route('beverages.index') }}" class="w-full text-center py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-xl text-xs transition shadow-sm">{{ __('messages.manage_now') }}</a>
-                    </div>
-
-                    <!-- ៤. គ្រប់គ្រងឯកសារ និងមេរៀន -->
-                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition duration-200">
-                        <div>
-                            <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-4 text-lg">📄</div>
-                            <h5 class="font-bold text-lg text-gray-900 mb-1">{{ __('messages.library_title') }}</h5>
-                            <p class="text-xs text-gray-500 mb-6 leading-relaxed">{{ __('messages.library_hub_desc') }}</p>
-                        </div>
-                        <a href="{{ route('lessons.index') }}" class="w-full text-center py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl text-xs transition shadow-sm">{{ __('messages.manage_now') }}</a>
+                <div class="bg-white/40 dark:bg-slate-900/30 backdrop-blur-md rounded-[2.5rem] p-8 border border-slate-200 dark:border-slate-800 shadow-sm transition duration-300">
+                    <h4 class="text-xl font-black mb-4 flex items-center space-x-3">
+                        <span class="text-2xl">📞</span>
+                        <span>{{ __('messages.contact_support') }}</span>
+                    </h4>
+                    <div class="text-sm font-bold space-y-3 text-slate-600 dark:text-slate-400">
+                        <p class="flex items-center"><span class="mr-3 text-blue-500">📍</span>{{ __('messages.address_detail') }}</p>
+                        <p class="flex items-center"><span class="mr-3 text-emerald-500">📞</span>{{ __('messages.phone_detail') }}</p>
+                        <p class="flex items-center"><span class="mr-3 text-purple-500">📧</span>{{ __('messages.email_detail') }}</p>
                     </div>
                 </div>
             </div>

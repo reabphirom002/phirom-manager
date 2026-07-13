@@ -57,4 +57,46 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+     public function updateAvatar(\Illuminate\Http\Request $request)
+    {
+        $request->validate([
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $user = $request->user();
+
+        if ($request->hasFile('avatar')) {
+            // លុបរូបចាស់ចោលបើមាន
+            if ($user->avatar) {
+                $oldPath = str_replace('storage/', '', $user->avatar);
+                if (\Illuminate\Support\Facades\Storage::disk('public')->exists($oldPath)) {
+                    \Illuminate\Support\Facades\Storage::disk('public')->delete($oldPath);
+                }
+            }
+
+            // រក្សាទុករូបថ្មី
+            $path = $request->file('avatar')->store('avatars', 'public');
+            $user->avatar = 'storage/' . $path;
+            $user->save();
+        }
+
+        return back()->with('status', 'avatar-updated');
+    }
+
+    // មុខងារសម្រាប់លុបរូបថត Profile ចោល
+    public function destroyAvatar(\Illuminate\Http\Request $request)
+    {
+        $user = $request->user();
+        if ($user->avatar) {
+            $oldPath = str_replace('storage/', '', $user->avatar);
+            if (\Illuminate\Support\Facades\Storage::disk('public')->exists($oldPath)) {
+                \Illuminate\Support\Facades\Storage::disk('public')->delete($oldPath);
+            }
+            $user->avatar = null; // កំណត់ទៅជាគ្មានរូបភាពវិញ
+            $user->save();
+        }
+
+        return back()->with('status', 'avatar-deleted');
+    }
 }

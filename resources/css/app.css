@@ -1,3 +1,76 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ========================================================================= */
+/* កំណត់ការប្រើប្រាស់ពុម្ពអក្សរខ្មែរជាសកលទូទាំងប្រព័ន្ធ (Bilingual Typography Setup) */
+/* ========================================================================= */
+
+/* ១. កំណត់ឱ្យរាល់អក្សរទូទៅ ប្រើប្រាស់ពុម្ពអក្សរ Kantumruy Pro */
+body, p, span, label, input, select, textarea, button, a {
+    font-family: 'Kantumruy Pro', sans-serif !important;
+}
+
+/* ២. កំណត់ឱ្យរាល់ចំណងជើងធំៗ ប្រើប្រាស់ពុម្ពអក្សរ បាត់ដំបង (Battambang) ស្អាត និងច្បាស់ល្អ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Battambang', sans-serif !important;
+    font-weight: 700 !important; /* ដាក់កម្រិតអក្សរដិតស្អាត */
+}
+
+
+/* ========================================================================= */
+/* ប្រព័ន្ធបម្លែងពណ៌ខ្មៅ-សអូតូសកលទូទាំងគ្រប់ទំព័រ និងគ្រប់ Folder ទាំងអស់ (Auto Dark Mode Override) */
+/* ========================================================================= */
+
+/* បង្ហាញផ្ទៃខាងក្រោយងងឹត */
+.dark body {
+    background-color: #090d16 !important; /* bg-slate-950 */
+    color: #f1f5f9 !important;
+}
+
+/* បង្ហាញរាល់ប្រអប់សន្លឹកបៀរពណ៌ស (Cards) និងប៉ាណែលឱ្យទៅជាងងឹតស្វ័យប្រវត្ត */
+.dark .bg-white,
+.dark .bg-gray-50,
+.dark [class*="bg-white"],
+.dark [class*="bg-gray-50"] {
+    background-color: #111827 !important; /* bg-slate-900 */
+    color: #f1f5f9 !important;
+    border-color: #1f2937 !important; /* border-slate-800 */
+}
+
+/* បម្លែងរាល់តារាងទិន្នន័យ (Tables) ទាំងអស់ក្នុងគ្រប់ Folder ឱ្យទៅជាងងឹតអូតូ */
+.dark table,
+.dark thead,
+.dark tbody,
+.dark tr,
+.dark th,
+.dark td {
+    background-color: #111827 !important;
+    color: #e2e8f0 !important;
+    border-color: #1f2937 !important;
+}
+
+/* បម្លែងរាល់ប្រអប់បញ្ចូលទិន្នន័យ (Inputs & Selects) ទាំងអស់ឱ្យទៅជាងងឹតអូតូ */
+.dark input,
+.dark select,
+.dark textarea {
+    background-color: #030712 !important; /* bg-slate-950 */
+    color: #ffffff !important;
+    border-color: #1f2937 !important;
+}
+
+/* បម្លែងរាល់អក្សរចម្បងៗទាំងអស់ឱ្យទៅជាពណ៌សភ្លឺច្បាស់ល្អ */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6,
+.dark label {
+    color: #ffffff !important;
+}
+
+.dark p,
+.dark span {
+    color: #9ca3af !important; /* text-gray-400 */
+}

@@ -1,83 +1,90 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - PHIROM MANAGER</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style> body { font-family: 'Kantumruy Pro', sans-serif; } </style>
-</head>
-<body class="bg-gray-50 min-h-screen flex flex-col md:flex-row">
-
-    <!-- ចំហៀងខាងឆ្វេង៖ ផ្ទាំងម៉ាកសញ្ញាក្រុមហ៊ុន (Brand Banner) -->
-    <div class="hidden md:flex md:w-1/2 bg-gradient-to-tr from-blue-600 to-indigo-800 text-white flex-col justify-between p-12">
-        <div class="flex items-center space-x-2">
-            <span class="text-2xl font-bold tracking-wider">PHIROM MANAGER</span>
+<x-guest-layout>
+    <!-- Header Icon & Title -->
+    <div class="flex flex-col items-center mb-6 text-center">
+        <div class="p-4 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 rounded-full mb-3 shadow-sm">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+            </svg>
         </div>
-        <div class="space-y-4">
-            <h1 class="text-4xl font-bold leading-tight">{{ __('messages.welcome_title') }}</h1>
-            <p class="text-blue-100 text-lg">{{ __('messages.welcome_subtitle') }}</p>
-        </div>
-        <p class="text-sm text-blue-200">&copy; {{ date('Y') }} PHIROM MANAGER.</p>
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white">
+            {{ app()->getLocale() == 'km' ? 'ចុះឈ្មោះគណនីថ្មី' : 'Create New Account' }}
+        </h2>
+        <p class="mt-1.5 text-xs text-gray-500 dark:text-slate-400">
+            {{ app()->getLocale() == 'km' ? 'បំពេញព័ត៌មានខាងក្រោមដើម្បីបង្កើតគណនី' : 'Fill in the information below to register.' }}
+        </p>
     </div>
 
-    <!-- ចំហៀងខាងស្ដាំ៖ ទម្រង់បំពេញព័ត៌មាន Register -->
-    <div class="w-full md:w-1/2 flex flex-col justify-center items-center p-8 sm:p-12 md:p-16 relative bg-white">
-        
-        <!-- ប៊ូតុងប្ដូរភាសា -->
-        <div class="absolute top-5 right-5 space-x-1">
-            <a href="{{ route('lang.switch', 'km') }}" class="px-2.5 py-1 text-xs font-semibold rounded {{ app()->getLocale() == 'km' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700' }}">ខ្មែរ</a>
-            <a href="{{ route('lang.switch', 'en') }}" class="px-2.5 py-1 text-xs font-semibold rounded {{ app()->getLocale() == 'en' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700' }}">EN</a>
-        </div>
+    <form method="POST" action="{{ route('register') }}" class="space-y-4">
+        @csrf
 
-        <div class="w-full max-w-md space-y-6">
-            <!-- ឡូហ្គោជារង្វង់មូលផ្ទាល់ខ្លួន -->
-            <div class="text-center">
-                <img class="w-20 h-20 rounded-full object-cover mx-auto shadow-md border-4 border-blue-100" src="{{ asset('images/logo.png') }}" alt="Logo">
-                <!-- <div class="w-20 h-20 rounded-full bg-blue-600 text-white flex items-center justify-center text-3xl font-bold mx-auto shadow-lg border-4 border-blue-100">PM</div> -->
-                <h2 class="mt-4 text-2xl font-bold text-gray-900">{{ __('messages.register') }}</h2>
+        <!-- Name -->
+        <div>
+            <x-input-label for="name" :value="app()->getLocale() == 'km' ? 'ឈ្មោះពេញ' : 'Full Name'" class="font-semibold text-gray-700 dark:text-slate-300" />
+            <div class="mt-1 relative rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </div>
+                <x-text-input id="name" class="block w-full pl-10 border-gray-300 dark:border-slate-800 rounded-xl text-sm dark:bg-slate-950 dark:text-white" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" placeholder="John Doe" />
             </div>
-
-            <form class="space-y-4" method="POST" action="{{ route('register') }}">
-                @csrf
-
-                <!-- Name -->
-                <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">{{ __('messages.name') }}</label>
-                    <input id="name" name="name" type="text" required autofocus class="appearance-none rounded-lg relative block w-full px-3 py-2.5 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('name') }}">
-                    <x-input-error :messages="$errors->get('name')" class="mt-2" />
-                </div>
-
-                <!-- Email Address -->
-                <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">{{ __('messages.email') }}</label>
-                    <input id="email" name="email" type="email" required class="appearance-none rounded-lg relative block w-full px-3 py-2.5 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('email') }}">
-                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
-                </div>
-
-                <!-- Password -->
-                <div>
-                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">{{ __('messages.password') }}</label>
-                    <input id="password" name="password" type="password" required class="appearance-none rounded-lg relative block w-full px-3 py-2.5 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
-                </div>
-
-                <!-- Confirm Password -->
-                <div>
-                    <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-1">{{ __('messages.confirm_password') }}</label>
-                    <input id="password_confirmation" name="password_confirmation" type="password" required class="appearance-none rounded-lg relative block w-full px-3 py-2.5 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                    <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-                </div>
-
-                <div class="flex items-center justify-between pt-2">
-                    <a href="{{ route('login') }}" class="text-sm font-medium text-blue-600 hover:text-blue-500">{{ __('messages.already_registered') }}</a>
-                    <button type="submit" class="py-2.5 px-5 text-sm font-semibold rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none transition duration-150">
-                        {{ __('messages.register') }}
-                    </button>
-                </div>
-            </form>
+            <x-input-error :messages="$errors->get('name')" class="mt-1" />
         </div>
-    </div>
-</body>
-</html>
+
+        <!-- Email Address -->
+        <div>
+            <x-input-label for="email" :value="app()->getLocale() == 'km' ? 'អាសយដ្ឋានអ៊ីមែល' : 'Email Address'" class="font-semibold text-gray-700 dark:text-slate-300" />
+            <div class="mt-1 relative rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.206" />
+                    </svg>
+                </div>
+                <x-text-input id="email" class="block w-full pl-10 border-gray-300 dark:border-slate-800 rounded-xl text-sm dark:bg-slate-950 dark:text-white" type="email" name="email" :value="old('email')" required autocomplete="username" placeholder="example@gmail.com" />
+            </div>
+            <x-input-error :messages="$errors->get('email')" class="mt-1" />
+        </div>
+
+        <!-- Password -->
+        <div>
+            <x-input-label for="password" :value="app()->getLocale() == 'km' ? 'ពាក្យសម្ងាត់' : 'Password'" class="font-semibold text-gray-700 dark:text-slate-300" />
+            <div class="mt-1 relative rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+                <x-text-input id="password" class="block w-full pl-10 border-gray-300 dark:border-slate-800 rounded-xl text-sm dark:bg-slate-950 dark:text-white" type="password" name="password" required autocomplete="new-password" placeholder="••••••••" />
+            </div>
+            <x-input-error :messages="$errors->get('password')" class="mt-1" />
+        </div>
+
+        <!-- Confirm Password -->
+        <div>
+            <x-input-label for="password_confirmation" :value="app()->getLocale() == 'km' ? 'បញ្ជាក់ពាក្យសម្ងាត់' : 'Confirm Password'" class="font-semibold text-gray-700 dark:text-slate-300" />
+            <div class="mt-1 relative rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+                <x-text-input id="password_confirmation" class="block w-full pl-10 border-gray-300 dark:border-slate-800 rounded-xl text-sm dark:bg-slate-950 dark:text-white" type="password" name="password_confirmation" required autocomplete="new-password" placeholder="••••••••" />
+            </div>
+            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-1" />
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="space-y-4 pt-3">
+            <x-primary-button class="w-full justify-center py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-sm shadow-lg shadow-indigo-600/10">
+                {{ app()->getLocale() == 'km' ? 'ចុះឈ្មោះគណនី' : 'Register Account' }}
+            </x-primary-button>
+
+            <div class="text-center">
+                <span class="text-xs text-gray-500">{{ app()->getLocale() == 'km' ? 'មានគណនីរួចហើយមែនទេ?' : 'Already registered?' }}</span>
+                <a href="{{ route('login') }}" class="text-xs font-bold text-indigo-500 hover:text-indigo-600 ml-1">
+                    {{ app()->getLocale() == 'km' ? 'ចូលប្រើប្រាស់' : 'Log In' }}
+                </a>
+            </div>
+        </div>
+    </form>
+</x-guest-layout>
