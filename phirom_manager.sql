@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2026 at 08:04 PM
+-- Generation Time: Jul 13, 2026 at 08:42 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -264,7 +264,7 @@ INSERT INTO `lessons` (`id`, `title`, `category_id`, `description`, `type`, `fil
 (18, 'ស្វែងយល់អំពីតួនាទី IT Support ក្នុងវិស័យព័ត៌មានវិទ្យា | Infrastructure & Support', 15, '<p><strong><em>តើអ្នកចង់ចាប់ផ្ដើមអាជីពក្នុងវិស័យព័ត៌មានវិទ្យា (IT) ដែលមានប្រាក់ខែខ្ពស់ និងតម្រូវការទីផ្សារច្រើនមែនទេ?</em></strong></p><p><br></p><p>វីដេអូនេះនឹងនាំអ្នកសិក្សាទៅ «ស្វែងយល់អំពីតួនាទី IT Support ក្នុងវិស័យព័ត៌មានវិទ្យា» ឱ្យកាន់តែស៊ីជម្រៅបំផុត! វគ្គសិក្សានេះ ត្រូវបានរៀបចំឡើងជាពិសេសសម្រាប់និស្សិត IT និងអ្នកដែលចង់ប្ដូរអាជីពមកកាន់បច្ចេកវិទ្យា។ យើងនឹងសិក្សាតាំងពីក្បួនដោះស្រាយបញ្ហាគ្រឿងម៉ាស៊ីន (Hardware) ការគ្រប់គ្រងប្រព័ន្ធប្រតិបត្តិការ (Windows/macOS) រហូតដល់ការរៀបចំបណ្ដាញ Network និងសុវត្ថិភាពព័ត៌មានវិទ្យាក្នុងក្រុមហ៊ុន។ 📌 ខ្លឹមសារសំខាន់ៗដែលអ្នកនឹងទទួលបាន៖ ✅ និយមន័យពិតប្រាកដ និងកម្រិតការងារ Tier 1, 2, 3 ✅ បច្គេកទេសជួសជុល Hardware និងការ Upgrade កុំព្យូទ័រ ✅ របៀបដោះស្រាយបញ្ហា Windows, Drivers និងផ្ទាំងខៀវ (BSOD) ✅ មូលដ្ឋានគ្រឹះ Network (IP Address, DNS, WiFi, Router) ✅ ឧបករណ៍សង្គ្រោះដែលអ្នក IT អាជីពត្រូវតែមាន ✅ ជំនាញទំនាក់ទំនង (Soft Skills) និងការត្រៀមខ្លួនសម្ភាសន៍ការងារ</p>', 'video', NULL, 'https://www.youtube.com/watch?v=V10tmQlXMNQ&list=PLDEOYYvXSwDQnKKuhQWkJK7PZJlq-8dLi', 'https://img.youtube.com/vi/V10tmQlXMNQ/maxresdefault.jpg', '2026-07-02 01:09:16', '2026-07-02 23:39:02'),
 (19, 'សិក្សាជំនាញវគ្គ Data Scientist ចាប់ផ្ដើមពីសូន្យ រហូតក្លាយជាអ្នកជំនាញ - Full Course | Data Scientist', 16, '<p>សូមស្វាគមន៍មកកាន់វគ្គសិក្សា \"អ្នកវិទ្យាសាស្ត្រទិន្នន័យ (Data Scientist)\" ដែលលម្អិតបំផុតជាភាសាខ្មែរ! នៅក្នុងវីដេអូនេះ ខ្ញុំនឹងនាំអ្នកសិក្សាឈានជើងចូលទៅក្នុងពិភពនៃបញ្ញាសិប្បនិម្មិត (AI) និងការរៀនរបស់ម៉ាស៊ីន (Machine Learning) តាំងពីកម្រិតដំបូង រហូតដល់អាចបង្កើតគំរូព្យាករណ៍កម្រិតខ្ពស់បានដោយខ្លួនឯង។ តើអ្នកចង់ប្តូរពីការវិភាគទិន្នន័យធម្មតា ទៅជាអ្នកបង្កើតប្រព័ន្ធឆ្លាតវៃមែនទេ? វគ្គសិក្សានេះគឺជាចម្លើយរបស់អ្នក។ យើងនឹងសិក្សាលើឧបករណ៍ និងបច្ចេកវិទ្យាសំខាន់ៗរួមមាន៖ ✅ Python Advanced: ការប្រើប្រាស់ NumPy, Pandas សម្រាប់ទិន្នន័យស្មុគស្មាញ។ ✅ Machine Learning: ស្ទាត់ជំនាញលើ Algorithm ដូចជា Linear Regression, Random Forest និង K-Means។ ✅ Deep Learning: មូលដ្ឋានគ្រឹះនៃបណ្ដាញសរសៃប្រសាទជាមួយ TensorFlow។ ✅ Big Data Tools: ការចាត់ចែងទិន្នន័យជាមួយ PySpark និងការតភ្ជាប់ Oracle Database។ ✅ Model Deployment: ការយក AI ដែលបានធ្វើរួចទៅដាក់ឱ្យប្រើប្រាស់ក្នុងកម្មវិធីពិត។ វគ្គសិក្សានេះមិនត្រឹមតែបង្រៀនសរសេរកូដទេ ប៉ុន្តែថែមទាំងពន្យល់ពីគណិតវិទ្យា និងស្ថិតិដែលនៅពីក្រោយ AI ទៀតផង។</p>', 'video', NULL, 'https://www.youtube.com/watch?v=e_QZ13_MJLQ&list=PLDEOYYvXSwDQ4bvNSL98TpGEmcc6OkF9G', 'https://img.youtube.com/vi/e_QZ13_MJLQ/maxresdefault.jpg', '2026-07-02 01:15:22', '2026-07-02 23:37:58'),
 (20, 'សិក្សាជំនាញវគ្គ Data Analyst ចាប់ផ្ដើមពីសូន្យ រហូតក្លាយជាអ្នកជំនាញ - Full Course | Data Analyst', 16, '<p>ស្វាគមន៍មកកាន់វគ្គសិក្សា Data Analyst ពេញលេញបំផុតដែលមិនធ្លាប់មាន! នៅក្នុងវីដេអូនេះ ខ្ញុំនឹងនាំអ្នកសិក្សាចាប់ផ្ដើមតាំងពីចំណុចសូន្យ រហូតដល់អាចយល់ដឹង និងអនុវត្តការងារជាអ្នកវិភាគទិន្នន័យអាជីពបានពិតប្រាកដ។ តើអ្នកចង់ក្លាយជាបុគ្គលិកដែលក្រុមហ៊ុនធំៗត្រូវការបំផុតមែនទេ? ជំនាញ Data Analyst គឺជាចម្លើយ។ នៅក្នុង Full Course នេះ អ្នកនឹងបានរៀននូវឧបករណ៍សំខាន់ៗទាំង ៤៖ ✅ Microsoft Excel: ការសម្អាតទិន្នន័យ និងប្រើ Pivot Table កម្រិតខ្ពស់។ ✅ SQL: ការសរសេរកូដទាញយកទិន្នន័យពីរាប់លានជួរចេញពី Database។ ✅ Python (Pandas): ស្វ័យប្រវត្តិកម្មនៃការវិភាគ និងការចាត់ចែងទិន្នន័យខ្នាតយក្ស។ ✅ Power BI: ការបង្កើត Dashboard ដ៏ស្រស់ស្អាតសម្រាប់ធ្វើរបាយការណ៍ជូនថ្នាក់ដឹកនាំ។ មេរៀននេះត្រូវបានរៀបចំឡើងយ៉ាងលម្អិត បូករួមទាំងការអនុវត្តគម្រោងពិត (Capstone Project) ដែលអ្នកអាចយកទៅដាក់ក្នុង Portfolio សម្រាប់ដាក់ពាក្យធ្វើការបានភ្លាមៗ។</p>', 'video', NULL, 'https://www.youtube.com/watch?v=N1Km0qTq3rw&list=PLDEOYYvXSwDQXCE0eouljcLYF5ft-tur4', 'https://img.youtube.com/vi/N1Km0qTq3rw/maxresdefault.jpg', '2026-07-02 01:16:25', '2026-07-02 23:38:19'),
-(21, 'សិក្សាមេរៀនវគ្គ Laragon ពីមូលដ្ឋានគ្រឹះ រហូតដល់កម្រិតខ្ពស់ (ពីដើមដល់ចប់) - Full Course | Laragon', 17, '<p>សិក្សាមេរៀនវគ្គ Laragon ពីមូលដ្ឋានគ្រឹះ រហូតដល់ម្រិតខ្ពស់ (ពីដើមដល់ចប់) - Full Course Laragon គឺជាជម្រើសដ៏ល្អបំផុតសម្រាប់អ្នកចង់បង្កើតវេបសាយនៅលើកុំព្យូទ័រ Windows ដោយវាមានភាពស្រាល លឿន និងទំនើបជាង XAMPP ឬ WampServer。 នៅក្នុងវីដេអូនេះ ខ្ញុំនឹងបង្រៀនអ្នកសិក្សាពីរបៀបរៀបចំ Local Server ឱ្យមានប្រសិទ្ធភាពបំផុត។ ខ្លឹមសារមេរៀនរួមមាន ការដំឡើង Laragon ការកំណត់ PATH ឱ្យស្គាល់ Commands ការប្រើប្រាស់ Virtual Hosts ដើម្បីឱ្យមានឈ្មោះវេបសាយស្អាតៗ (.test) និងការគ្រប់គ្រង Database ជាមួយ HeidiSQL។ ជាពិសេស យើងនឹងមានការអនុវត្តគម្រោងពិត (Project) បង្កើតកម្មវិធីគ្រប់គ្រងបញ្ជីឈ្មោះដែលមាន UI ស្អាតជាមួយ Tailwind CSS និងការបង្រៀនដំឡើង WordPress ក្នុងរយៈពេលដ៏ខ្លីបំផុត។ មេរៀននេះស័ក្តិសមបំផុតសម្រាប់អ្នកដែលចង់ក្លាយជា Web Developer។</p>', 'video', NULL, 'https://www.youtube.com/watch?v=OrsFUsIPXP0&list=PLDEOYYvXSwDRlZNlZ5CWZ8ED9DepKIXHi', 'https://img.youtube.com/vi/OrsFUsIPXP0/maxresdefault.jpg', '2026-07-02 01:17:41', '2026-07-02 23:37:33'),
+(21, 'សិក្សាមេរៀនវគ្គ Laragon ពីមូលដ្ឋានគ្រឹះ រហូតដល់កម្រិតខ្ពស់ (ពីដើមដល់ចប់) - Full Course | Laragon', 17, '<p><strong>សិក្សាមេរៀនវគ្គ Laragon ពីមូលដ្ឋានគ្រឹះ រហូតដល់ម្រិតខ្ពស់ (ពីដើមដល់ចប់) - Full Course Laragon </strong></p><p><br></p><p>គឺជាជម្រើសដ៏ល្អបំផុតសម្រាប់អ្នកចង់បង្កើតវេបសាយនៅលើកុំព្យូទ័រ Windows ដោយវាមានភាពស្រាល លឿន និងទំនើបជាង XAMPP ឬ WampServer。 នៅក្នុងវីដេអូនេះ ខ្ញុំនឹងបង្រៀនអ្នកសិក្សាពីរបៀបរៀបចំ Local Server ឱ្យមានប្រសិទ្ធភាពបំផុត។ ខ្លឹមសារមេរៀនរួមមាន ការដំឡើង Laragon ការកំណត់ PATH ឱ្យស្គាល់ Commands ការប្រើប្រាស់ Virtual Hosts ដើម្បីឱ្យមានឈ្មោះវេបសាយស្អាតៗ (.test) និងការគ្រប់គ្រង Database ជាមួយ HeidiSQL។ ជាពិសេស យើងនឹងមានការអនុវត្តគម្រោងពិត (Project) បង្កើតកម្មវិធីគ្រប់គ្រងបញ្ជីឈ្មោះដែលមាន UI ស្អាតជាមួយ Tailwind CSS និងការបង្រៀនដំឡើង WordPress ក្នុងរយៈពេលដ៏ខ្លីបំផុត។ មេរៀននេះស័ក្តិសមបំផុតសម្រាប់អ្នកដែលចង់ក្លាយជា Web Developer។</p>', 'video', NULL, 'https://www.youtube.com/watch?v=OrsFUsIPXP0&list=PLDEOYYvXSwDRlZNlZ5CWZ8ED9DepKIXHi', 'https://img.youtube.com/vi/OrsFUsIPXP0/maxresdefault.jpg', '2026-07-02 01:17:41', '2026-07-12 10:45:53'),
 (22, 'សិក្សាមេរៀនវគ្គ Docker ពីមូលដ្ឋានគ្រឹះ រហូតដល់កម្រិតខ្ពស់ (ពីដើមដល់ចប់) - Full Course | Docker', 17, '<p>សិក្សាមេរៀនវគ្គ Docker ពីមូលដ្ឋានគ្រឹះ រហូតដល់កម្រិតខ្ពស់ (ពីដើមដល់ចប់) - Full Course | Docker</p><p><br></p><p>ស្វាគមន៍មកកាន់ការសិក្សាអំពី Docker ដែលជាបច្ចេកវិទ្យាដ៏មានអំណាចសម្រាប់អ្នកអភិវឌ្ឍកម្មវិធី (Developers)។ នៅក្នុងវីដេអូនេះ ខ្ញុំនឹងនាំអ្នកសិក្សាទាំងអស់គ្នាទៅស្វែងយល់ពីរបៀបខ្ចប់កម្មវិធីឱ្យដើរបានលើគ្រប់កុំព្យូទ័រដោយគ្មានកំហុស។ មេរៀននេះរួមមានការរៀបចំគ្រឿងម៉ាស៊ីនឱ្យត្រូវស្តង់ដារ ការដំឡើង Docker Desktop និងការប្រើប្រាស់ Visual Studio Code ដើម្បីបញ្ជា Docker។ អ្នកសិក្សានឹងបានរៀនពីការប្រើប្រាស់ពាក្យបញ្ជា (Commands) សំខាន់ៗ ការបង្កើតរូបមន្តកម្មវិធីផ្ទាល់ខ្លួន (Dockerfile) ការគ្រប់គ្រងទិន្នន័យ (Volumes) និងការបញ្ជាប្រព័ន្ធ Web + Database ឱ្យដើរជុំគ្នាដោយប្រើ Docker Compose។ មេរៀននេះត្រូវបានរៀបចំឡើងយ៉ាងលម្អិតបំផុត ដើម្បីឱ្យអ្នកសិក្សាអាចអនុវត្តតាមបាន ១០០%។</p>', 'video', NULL, 'https://www.youtube.com/watch?v=lItudsVRUvU&list=PLDEOYYvXSwDQWG9inbZdekh46f1m8EWqE&pp=0gcJCe4COCosWNin', 'https://img.youtube.com/vi/lItudsVRUvU/maxresdefault.jpg', '2026-07-02 01:19:04', '2026-07-02 23:37:04'),
 (23, 'ស្វែងយល់អំពីតួនាទី IT Support ក្នុងវិស័យជំនាញព័ត៌មានវិទ្យា', 15, NULL, 'pdf', 'lessons/files/R9FRuXGqEUvGQ6PtvUa9nZFAVaoC0Ue9nX21awRY.pdf', NULL, 'lessons/thumbnails/GnEf94V8Bfx0rcxPVZ5bPVzBGQCHnmy5QCx4Ljjq.jpg', '2026-07-02 01:20:15', '2026-07-02 01:20:21'),
 (25, 'យុគ ឌីជីថល - Yuk Digital', 18, '<p>សួស្តីអ្នកទាំងអស់គ្នា។</p><p><br></p><p>ខ្ញុំចង់និយាយត្រង់ៗបន្តិច... ពិភពឌីជីថលសព្វថ្ងៃនេះ ដូចជាទីក្រុងធំមួយអញ្ចឹង។ មានផ្លូវច្រើនណាស់ មានឱកាសច្រើនរាប់មិនអស់ តែបើអត់មានអ្នកនាំផ្លូវ ឬផែនទីត្រឹមត្រូវទេ យើងអាចវង្វេងបានយ៉ាងងាយ។ ខ្ញុំបង្កើតឆាណែល «យុគឌីជីថល» នេះឡើង មិនមែនដោយសារខ្ញុំដឹងគ្រប់រឿងនោះទេ។ ផ្ទុយទៅវិញ គឺដោយសារខ្ញុំធ្លាប់វង្វេងដូចគ្នា។ ខ្ញុំធ្លាប់ចំណាយពេលរាប់ម៉ោងដើម្បីរៀនអ្វីមួយដែលគេអាចពន្យល់ត្រឹមតែប៉ុន្មាននាទី។ គោលដៅរបស់ខ្ញុំនៅទីនេះគឺសាមញ្ញទេ៖ ខ្ញុំចង់ចែករំលែក «ផែនទី» ដែលខ្ញុំបានរកឃើញ។ ខ្ញុំចង់បកស្រាយរឿងស្មុគស្មាញ ឲ្យក្លាយទៅជារឿងងាយៗ ដែលយើងអាចយកទៅប្រើដើម្បីរកចំណូល ឬធ្វើឲ្យការងារប្រចាំថ្ងៃរបស់យើងកាន់តែស្រួលជាងមុន។ នៅទីនេះ មិនមែនជាថ្នាក់រៀនទេ តែជាកន្លែងសម្រាប់មិត្តភក្តិជួបជុំគ្នា ជួយគ្នា និងដោះស្រាយបញ្ហាជាមួយគ្នា។ ខ្ញុំនឹងចែករំលែកអ្វីដែលខ្ញុំដឹង ហើយខ្ញុំក៏សង្ឃឹមថានឹងបានរៀនសូត្រពីអ្នកទាំងអស់គ្នាវិញដែរ។ បើអ្នកចង់បានមិត្តម្នាក់រួមដំណើរក្នុងពិភពឌីជីថលនេះ... ខ្ញុំនៅទីនេះ។ តោះ! ចាប់ផ្ដើមដំណើររបស់យើងទាំងអស់គ្នា។</p>', 'image', 'lessons/files/qKsReLBWMgW2peu7Xee99DWuak1NJTKdiE6nA0M3.png', NULL, NULL, '2026-07-02 01:21:55', '2026-07-02 23:35:45'),
@@ -343,16 +343,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `brand`, `specs`, `qty`, `buying_price`, `selling_price`, `warranty`, `image_url`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'MacBook Pro 14-inch M3', 'Apple', 'Apple M3 Chip, 8-Core CPU, 10-Core GPU, 8GB Unified Memory, 512GB SSD', 8, 1350.00, 159.00, '1 Year', 'https://sm.pcmag.com/pcmag_uk/review/a/apple-macb/apple-macbook-pro-14-inch-2023-m3_99pf.jpg', 'កុំព្យូទ័រយួរដៃដ៏ប្រណីតសម្រាប់អ្នកឌីហ្សាញ និងការងាររដ្ឋបាលទូទៅ ថ្មប្រើប្រាស់បានយូរ។', '2026-07-03 07:09:56', '2026-07-03 00:57:29'),
-(2, 'ASUS ROG Zephyrus G14', 'ASUS', 'AMD Ryzen 9, 16GB DDR5, 1TB NVMe SSD, RTX 4060 8GB, 14\" QHD+ 165Hz', 3, 1150.00, 1999.00, '2 Years', 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500&auto=format&fit=crop&q=60', 'កុំព្យូទ័រហ្គេមមីង និងសរសេរកូដខ្នាតស្រាល ងាយស្រួលយកតាមខ្លួន និងសមត្ថភាពខ្លាំង។', '2026-07-03 07:09:56', '2026-07-03 01:06:03'),
-(3, 'Dell XPS 13 Plus 9320', 'Dell', 'Intel Core i7-1360P, 16GB LPDDR5, 512GB SSD, 13.4\" FHD+ Touch screen', 3, 1200.00, 1450.00, '1 Year', 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=500&auto=format&fit=crop&q=60', 'កុំព្យូទ័របែបការិយាល័យលំដាប់ខ្ពស់ ស៊ុមស្ដើងខ្លាំង និងមានរចនាបថទាន់សម័យ។', '2026-07-03 07:09:56', '2026-07-03 07:09:56'),
-(4, 'Lenovo Legion 5 Pro', 'Lenovo', 'Intel Core i7-13700HX, 16GB RAM, 1TB SSD, RTX 4070 8GB, 16\" WQXGA 240Hz', 2, 1250.00, 1499.00, '2 Years', 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&auto=format&fit=crop&q=60', 'កុំព្យូទ័រលំដាប់កំពូលសម្រាប់ការលេងហ្គេមធ្ងន់ៗ និងការងារកាត់តវីដេអូកម្រិត 4K។', '2026-07-03 07:09:56', '2026-07-03 01:04:53'),
-(6, 'MSI Cyborg 15', 'MSI', 'Intel Core i5-12450H, 8GB DDR5, 512GB SSD, RTX 4050 6GB, 15.6\" FHD 144Hz', 4, 680.00, 799.00, '1 Year', 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&auto=format&fit=crop&q=60', 'កុំព្យូទ័រលេងហ្គេមតម្លៃធូរថ្លៃ សមត្ថភាពល្អអាចសរសេរកូដ និងរៀនឌីហ្សាញបានរលូន។', '2026-07-03 07:09:56', '2026-07-03 00:57:15'),
-(7, 'Acer Aspire 3', 'Acer', 'Intel Core i3-1115G4, 8GB RAM, 256GB SSD, Intel UHD Graphics, 15.6\" HD', 10, 270.00, 329.00, '1 Year', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDuVfHjM0jYUl6pXVoni8LIE8dai_tKN0Fbqr9VlwW4tHdhG4VR3MK0jQp&s=10', 'កុំព្យូទ័រថវិការទាប សម្រាប់សិស្សវិទ្យាល័យសិក្សាមូលដ្ឋានគ្រឹះ និងវាយឯកសារ។', '2026-07-03 07:09:56', '2026-07-03 00:55:42'),
-(8, 'Logitech G502 Hero Mouse', 'Logitech', 'High Performance Gaming Mouse, 25,600 DPI, 11 Programmable Buttons', 25, 32.00, 45.00, '6 Months', 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=60', 'ម៉ៅហ្គេមមីងអាជីព និងពេញនិយមបំផុត មានល្បឿនលឿន និងទម្ងន់អាចសម្រួលបាន។', '2026-07-03 07:09:56', '2026-07-03 07:09:56'),
-(9, 'Keychron K2 V2 Keyboard', 'Keychron', 'Wireless Mechanical Keyboard, Gateron Brown Switch, RGB Backlight', 12, 65.00, 85.00, '1 Year', 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&auto=format&fit=crop&q=60', 'ក្តារចុចមេកានិចឥតខ្សែ ពេញនិយមសម្រាប់អ្នកសរសេរកូដ និងការវាយអត្ថបទរលូន។', '2026-07-03 07:09:56', '2026-07-03 07:09:56'),
-(10, 'Samsung Odyssey G5 27\"', 'Samsung', '27-inch Curved Gaming Monitor, WQHD (2560x1440), 144Hz, 1ms, HDR10', 2, 210.00, 269.00, '1 Year', 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&auto=format&fit=crop&q=60', 'អេក្រង់កោងកម្រិតច្បាស់ 2K សម្រាប់បទពិសោធន៍លេងហ្គេម និងមើលកូដបានទូលំទូលាយ។', '2026-07-03 07:09:56', '2026-07-03 07:09:56'),
-(12, 'laptop Acer Aspire Lite AL16 52P-526Z, NX.J5SEM.001, Core i5-1335U, 16GB, 512GB SSD, DOS, Gray', 'Acer', 'Laptop, ACER, Acer Aspire Lite AL16 52P-526Z,', 10, 2549.00, 1779.00, '1 Year', 'https://media.zid.store/e4aadd21-62d3-4ecb-b286-5cfefed6d23c/cbbb5d0f-66d7-4b50-80a2-22e4afb7a4db.png', 'Keyboard: Arabic - English\r\nAcer Aspire Lite AL16 52P-526Z\r\nIntel Core i5-1335U Processor\r\n- Non-touch screen, 16\'\' WUXGA (1920x1200) IPS\r\nRam16GB DDR5\r\n512GB SSD\r\nIntel UHD Graphics\r\nModel : (NX.J5SEM.001)', '2026-07-03 01:02:58', '2026-07-03 01:05:32');
+(1, 'MacBook Pro 16-inch M3 Max', 'Apple', 'Apple M3 Max chip with 16-core CPU, 40-core GPU, 48GB Unified Memory, 1TB SSD Storage, Retina XDR Display.', 5, 3199.00, 3499.00, '1 Year Warranty', 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80', 'The ultimate pro laptop for developers, video editors, and creators.', '2026-07-12 12:42:49', '2026-07-12 12:42:49'),
+(2, 'Asus ROG Zephyrus G16 (2026)', 'Asus', 'Intel Core Ultra 9 185H, NVIDIA GeForce RTX 4080 12GB, 32GB LPDDR5X, 1TB PCIe 4.0 NVMe SSD, 16-inch 2.5K OLED 240Hz.', 4, 2399.00, 2699.00, '1 Year Warranty', 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=500&q=80', 'Ultra-thin premium gaming and creator laptop with stunning OLED display.', '2026-07-12 12:42:49', '2026-07-12 12:42:49'),
+(3, 'Dell XPS 15 9530', 'Dell', 'Intel Core i7-13700H, NVIDIA GeForce RTX 4060 8GB, 16GB DDR5, 1TB M.2 PCIe SSD, 15.6-inch FHD+ InfinityEdge.', 6, 1699.00, 1899.00, '1 Year Warranty', 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=500&q=80', 'The gold standard of premium Windows laptops with iconic borderless screen.', '2026-07-12 12:42:49', '2026-07-12 12:42:49'),
+(4, 'MSI Raider GE78 HX', 'MSI', 'Intel Core i9-14900HX, NVIDIA GeForce RTX 4090 16GB, 64GB DDR5, 2TB NVMe PCIe Gen4 SSD, 17.3-inch QHD+ 240Hz.', 3, 3499.00, 3999.00, '1 Year Warranty', 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=500&q=80', 'Absolute beast laptop with peak desktop-class gaming performance.', '2026-07-12 12:42:49', '2026-07-12 12:42:49'),
+(5, 'Lenovo ThinkPad X1 Carbon Gen 11', 'Lenovo', 'Intel Core i7-1360p, Intel Iris Xe Graphics, 16GB LPDDR5, 512GB PCIe NVMe SSD, 14-inch WUXGA IPS Anti-Glare.', 8, 1299.00, 1499.00, '1 Year Warranty', 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=500&q=80', 'The legendary business laptop - ultra-lightweight, durable, and highly secure.', '2026-07-12 12:42:49', '2026-07-12 12:42:49');
 
 -- --------------------------------------------------------
 
@@ -374,7 +369,52 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('x35fPaCPIXz0FWv64t49e66poAjEQ2TSZw4qjKIu', 4, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiZ21nQVhLbzloczNUME50VDN4TXZkQlBhMlFYUWkxRjRQZm9lSE9KdCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXNoYm9hcmQiO3M6NToicm91dGUiO3M6OToiZGFzaGJvYXJkIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6NDtzOjY6ImxvY2FsZSI7czoyOiJlbiI7fQ==', 1783274495);
+('6rFEW6DH8UrmMDaLf4t5EgHR6R36rxDyIty6ZnKT', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiQlRZeER0ZXVkdE9wZUFyV1VxNVNwQm5TbnFUQ3dNNzdWdkVTMUdXRyI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozODoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3dvcmtzcGFjZS9zY2hvb2wiO31zOjk6Il9wcmV2aW91cyI7YToyOntzOjM6InVybCI7czozODoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3dvcmtzcGFjZS9zY2hvb2wiO3M6NToicm91dGUiO3M6MTY6IndvcmtzcGFjZS5zY2hvb2wiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1783923096),
+('dn4r1N7IgzWJ7bbHOSJKNpbTacUXtSeslu4RVjDf', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiT3FVbEFRUzEzdVhOS0pweE0yalEyZEhjNlZwYnhCQWNHOXBDNmpOYiI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozMToiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2Rhc2hib2FyZCI7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjMxOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvZGFzaGJvYXJkIjtzOjU6InJvdXRlIjtzOjk6ImRhc2hib2FyZCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1783923094),
+('DZ3yv1dkaWpsFlkZzvWncbe1J4snOf8dREVeThZX', 8, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiU3V0bHdhbEFOaWdnZ3FDN25JUXZQTk5nSVVjR29JQ3VScjFJZUtCSyI7czo2OiJsb2NhbGUiO3M6Mjoia20iO3M6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjI3OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvdXNlcnMiO3M6NToicm91dGUiO3M6MTE6InVzZXJzLmluZGV4Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MDp7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjg7fQ==', 1783923453),
+('Hv9AHoA4mldfYhTe49d29FRI1UDdsY2kVKZvqvTa', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiYVVXU3l2dGt4bGE0SUdHVzdSTmxhaFZLOG43aVIyVnJHZ3lzN2tpeCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXNoYm9hcmQiO3M6NToicm91dGUiO3M6OToiZGFzaGJvYXJkIjt9czo2OiJsb2NhbGUiO3M6MjoiZW4iO3M6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjY7fQ==', 1783899199),
+('z0AgdLP3EgjXhMkpKO5FTZNdRFEYe0gvNjo1H8jT', 8, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoia2tvbXVIWFJJUWo4RmtuT2R5OHNBdnpBT21wMTN3aE9kbGxia3NYaSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXNoYm9hcmQiO3M6NToicm91dGUiO3M6OToiZGFzaGJvYXJkIjt9czo2OiJsb2NhbGUiO3M6MjoiZW4iO3M6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjg7fQ==', 1783894958);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `settings`
+--
+
+CREATE TABLE `settings` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `key` varchar(255) NOT NULL,
+  `value` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` (`id`, `key`, `value`, `created_at`, `updated_at`) VALUES
+(1, 'perm_manager_view_dashboard', 1, '2026-07-12 01:02:59', '2026-07-12 15:20:09'),
+(2, 'perm_manager_manage_lessons', 1, '2026-07-12 01:02:59', '2026-07-12 15:20:09'),
+(3, 'perm_manager_manage_school', 1, '2026-07-12 01:02:59', '2026-07-12 15:20:09'),
+(4, 'perm_manager_manage_products', 1, '2026-07-12 01:02:59', '2026-07-12 15:20:09'),
+(5, 'perm_manager_manage_beverages', 1, '2026-07-12 01:02:59', '2026-07-12 15:20:09'),
+(6, 'perm_manager_view_billing', 1, '2026-07-12 01:02:59', '2026-07-12 15:20:09'),
+(7, 'perm_manager_manage_users', 1, '2026-07-12 01:02:59', '2026-07-12 15:20:09'),
+(8, 'perm_staff_view_dashboard', 1, '2026-07-12 01:02:59', '2026-07-12 08:46:37'),
+(9, 'perm_staff_manage_lessons', 1, '2026-07-12 01:02:59', '2026-07-12 08:46:37'),
+(10, 'perm_staff_manage_school', 1, '2026-07-12 01:02:59', '2026-07-12 08:46:37'),
+(11, 'perm_staff_manage_products', 1, '2026-07-12 01:02:59', '2026-07-12 08:46:37'),
+(12, 'perm_staff_manage_beverages', 1, '2026-07-12 01:02:59', '2026-07-12 08:46:37'),
+(13, 'perm_staff_view_billing', 1, '2026-07-12 01:02:59', '2026-07-12 08:46:37'),
+(14, 'perm_staff_manage_users', 1, '2026-07-12 01:02:59', '2026-07-12 11:22:35'),
+(15, 'perm_client_view_dashboard', 1, '2026-07-12 01:02:59', '2026-07-12 01:02:59'),
+(16, 'perm_client_manage_lessons', 0, '2026-07-12 01:02:59', '2026-07-12 00:54:30'),
+(17, 'perm_client_manage_school', 0, '2026-07-12 01:02:59', '2026-07-12 00:54:30'),
+(18, 'perm_client_manage_products', 0, '2026-07-12 01:02:59', '2026-07-12 00:54:30'),
+(19, 'perm_client_manage_beverages', 0, '2026-07-12 01:02:59', '2026-07-12 00:54:30'),
+(20, 'perm_client_view_billing', 0, '2026-07-12 01:02:59', '2026-07-12 00:54:31'),
+(21, 'perm_client_manage_users', 0, '2026-07-12 01:02:59', '2026-07-12 00:54:31');
 
 -- --------------------------------------------------------
 
@@ -407,7 +447,6 @@ INSERT INTO `students` (`id`, `name`, `phone`, `email`, `photo_url`, `course_id`
 (3, 'សុខ ម៉ារី', '077888999', 'mary@gmail.com', 'https://images.unsplash.com/photo-1494790108377-be9c29b29401?w=500&auto=format&fit=crop&q=60', 4, 4, 'active', '2026-06-25', 'បុគ្គលិកកាហ្វេមកហ្វឹកហាត់រូបមន្តថ្មីៗបន្ថែម', '2026-07-02 19:10:00', '2026-07-02 19:10:00'),
 (4, 'សេង បូរ៉ា', '015666777', 'bora@gmail.com', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80', 2, 3, 'active', '2026-06-10', 'រៀនផ្នែកបច្ចេកទេសតម្លើង និងជួសជុល Hardware', '2026-07-02 19:15:00', '2026-07-02 19:15:00'),
 (5, 'ចាន់ សុភ័ក្ត្រ', '085333444', 'sopheap@gmail.com', 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop&q=80', 3, 5, 'active', '2026-06-18', 'រៀនសរសេរកូដថ្នាក់ព្រឹក មានមូលដ្ឋានគ្រឹះខ្លះៗ', '2026-07-02 19:20:00', '2026-07-02 19:20:00'),
-(6, 'កែវ សុវណ្ណ', '093222111', 'sovann@gmail.com', 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80', 1, 1, 'completed', '2026-04-01', 'បានបញ្ចប់វគ្គសិក្សារដ្ឋបាលកុំព្យូទ័ររួចរាល់ដោយជោគជ័យ', '2026-07-02 19:25:00', '2026-07-02 19:25:00'),
 (7, 'ម៉ៅ ចាន់នី', '012999000', 'channy@gmail.com', 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop&q=80', 3, 2, 'active', '2026-06-15', 'សិស្សថ្នាក់កូដពេលល្ងាច មានវិន័យល្អ', '2026-07-02 19:30:00', '2026-07-02 19:30:00'),
 (8, 'អ៊ុង វិសាល', '088444555', 'visal@gmail.com', 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80', 2, 3, 'dropped', '2026-05-01', 'រវល់ការងារផ្ទាល់ខ្លួនខ្លាំង បោះបង់ពាក់កណ្ដាលទី', '2026-07-02 19:35:00', '2026-07-02 19:35:00'),
 (9, 'ទេព ស្រីអូន', '096555111', 'sreyoun@gmail.com', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80', 4, 4, 'active', '2026-06-25', 'ថ្នាក់ឆុងកាហ្វេចុងសប្ដាហ៍ រៀនលឿនយល់រហ័ស', '2026-07-02 19:40:00', '2026-07-02 19:40:00'),
@@ -428,18 +467,19 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `avatar` varchar(255) DEFAULT NULL
+  `avatar` varchar(255) DEFAULT NULL,
+  `role` varchar(255) NOT NULL DEFAULT 'student'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `avatar`) VALUES
-(1, 'Phirom2', 'phirom2@gmail.com', NULL, '$2y$12$vJbNxHWhB/4t4Ir4sOeige.JWUl0shM/z6wc8Aas4PBlRNAGVAkMi', NULL, '2026-07-01 00:03:01', '2026-07-05 10:10:10', NULL),
-(2, 'Admin', 'phirom@gmail.com', NULL, '$2y$12$/QfX5svYMVEpySObG0pkWOnViwk9QIUJXro564rDAU9JNetwYEIJa', NULL, '2026-07-01 09:45:04', '2026-07-01 09:45:04', NULL),
-(3, 'Super Admin', 'superadmin@gmail.com', NULL, '$2y$12$Tw6is.oSG.sWO60M86XvJOGLQ4HSN9mk8.pWOatt/Jy6q4tZEdBjm', NULL, '2026-07-03 11:33:06', '2026-07-03 11:33:06', NULL),
-(4, 'Reab Phirom', 'reabphirom@gmail.com', NULL, '$2y$12$xbcuyFEgiNqzXLXShLT5TOpqzUeeVZCJEW4AoS40M3zvwBft8E/SS', NULL, '2026-07-05 10:29:00', '2026-07-05 10:59:09', 'storage/avatars/Dwm8lzctQBNepp3FMRexGPwN5tpw630i7eUUiN5s.png');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `avatar`, `role`) VALUES
+(1, 'Lionel Messi', 'phirom2@gmail.com', NULL, '$2y$12$b7R5/H5rTTsqjqABTmkOQuY1PmA0iYYyj5i4/GuhNcztvhGdZAYXa', NULL, '2026-07-01 00:03:01', '2026-07-12 00:18:50', 'storage/avatars/yXXl8szP3Xs6RbXFjpyWnpVkOdckxhthroUfz9yl.png', 'admin'),
+(6, 'Staff', 'staff@gmail.com', NULL, '$2y$12$K5AWOoFcpHmWS2o3X95Dr..jm3Z2s3ehWCjdYaNN29mtJNXG/6VuO', NULL, '2026-07-11 18:33:54', '2026-07-12 14:42:27', 'storage/avatars/3dep3KIGC0iAtGMyS4hSHykW79OODaoDWjn2FZyS.png', 'admin'),
+(7, 'Test System By Developer', 'test@gmail.com', NULL, '$2y$12$zy1XFalWiVmRccoBU9Au1OdAal6REa24S4e3tv/63gblwPbwKUOVK', NULL, '2026-07-12 00:34:26', '2026-07-12 11:46:55', 'storage/avatars/trVCUMNj8GcWCkIocsCkrKgpXUOEhELaeeeg8kvB.png', 'admin'),
+(8, 'Super Admin', 'superadmin@gmail.com', NULL, '$2y$12$VAKDGV7k8V/Ra6xKdpD3cu3KZ.Rb6RV9dvuAw7U1x6CZsXfYYqlBW', NULL, '2026-07-12 15:15:55', '2026-07-12 15:16:31', NULL, 'admin');
 
 --
 -- Indexes for dumped tables
@@ -545,6 +585,13 @@ ALTER TABLE `sessions`
   ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
+-- Indexes for table `settings`
+--
+ALTER TABLE `settings`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `settings_key_unique` (`key`);
+
+--
 -- Indexes for table `students`
 --
 ALTER TABLE `students`
@@ -621,7 +668,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `settings`
+--
+ALTER TABLE `settings`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `students`
@@ -633,7 +686,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
