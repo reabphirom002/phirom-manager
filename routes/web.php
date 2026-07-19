@@ -13,6 +13,8 @@ use App\Http\Controllers\BeverageCategoryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PublicController;
 
+use Illuminate\Support\Facades\Artisan;
+
 // =========================================================================
 // ១. ក្រុមទំព័រមុខសាធារណៈទាំង ៤ (4 Public Frontends)
 // =========================================================================
@@ -83,6 +85,16 @@ Route::middleware('auth')->group(function () {
         Route::resource('users', UserController::class);
         Route::post('/settings/update', [UserController::class, 'updateSettings'])->name('settings.update');
     });
+
+
+Route::get('/run-migration', function () {
+    try {
+        Artisan::call('migrate', ['--force' => true]);
+        return 'Database migrated successfully! PHIROM MANAGER is ready!';
+    } catch (\Exception $e) {
+        return 'Error: ' . $e->getMessage();
+    }
+});
 
 });
 
